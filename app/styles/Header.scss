@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .social-media{
+    display: flex;
+    align-items: center;
+    width: 132px;
+    justify-content: space-between;
+  }
+
+  .geo-label{
+    display: flex;
+    align-items: center;
+    margin: 0 73px;
+
+    .city{
+      margin-left: 13px;
+    }
+  }
+
+  .buttons{
+    gap: 20px;
+  }
+
+  .info{
+    display: flex;
+
+  }
+}

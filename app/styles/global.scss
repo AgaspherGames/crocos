@@ -1,0 +1,30 @@
+*{
+  font-family: inherit;
+  font-size: 18px;
+}
+
+main{
+  width: 1440px;
+  margin: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+.c-btn {
+  padding: 15px 25px;
+  background: radial-gradient(
+    70.26% 224.84% at 27.18% 37%,
+    #00a2e4 23.34%,
+    #2000e4 100%
+  );
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+}
+
+.flex{
+  display: flex;
+}

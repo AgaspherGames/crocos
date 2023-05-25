@@ -1,0 +1,25 @@
+.slider {
+  height: 413px;
+
+  .slider-wrapper {
+    overflow: hidden;
+    display: flex;
+
+    .slide-line{
+      display: flex;
+      gap: 12px;
+
+      .slide {
+        img {
+          object-fit: contain;
+          width: 1073px;
+          height: 413px;
+          object-position: bottom left;
+        }
+      }
+
+    }
+    
+  }
+
+}
