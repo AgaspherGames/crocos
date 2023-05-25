@@ -10,7 +10,7 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({ alt, src, width, height, href }) => {
   return (
-    <a href={href}>
+    <a className="icon" href={href}>
       <Image alt={alt} src={src} width={width} height={height} />
     </a>
   );

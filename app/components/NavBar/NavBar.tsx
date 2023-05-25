@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Button from "../Button/Button";
 interface NavBarProps {}
 
 const NavBar: React.FC<NavBarProps> = () => {
@@ -12,6 +13,7 @@ const NavBar: React.FC<NavBarProps> = () => {
       <Link href={"#"}>Услуги</Link>
       <Link href={"#"}>Тендеры</Link>
       <Link href={"#"}>Отраслевой журнал</Link>
+      <Button className="menu">Меню</Button>
     </div>
   );
 };

@@ -4,8 +4,11 @@
 }
 
 main{
-  width: 1440px;
+  width: 98%;
   margin: auto;
+  @media only screen and (min-width: 1024px) {
+    width: calc(98% - 80px)
+  }
 }
 
 a{

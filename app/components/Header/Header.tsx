@@ -7,6 +7,7 @@ import whatsappIcon from "../../icons/whatsapp-orange.png";
 import facebookIcon from "../../icons/facebook-orange.png";
 import instagramIcon from "../../icons/instagram-orange.png";
 import geoIcon from "../../icons/geo.svg";
+import userIcon from "../../icons/user.svg";
 import Button from "../Button/Button";
 import Select from "../Select/Select";
 interface HeaderProps {}
@@ -17,7 +18,7 @@ const Header: React.FC<HeaderProps> = () => {
       <div>
         <Logo />
       </div>
-      <div className="info">
+      <div className="info"> 
         <div className="social-media">
           <Icon
             alt="WhatsApp icon"
@@ -53,7 +54,8 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className="flex buttons">
           <Select />
-          <Button>Личный кабинет</Button>
+          <Icon width={25}height={25} alt="user icon" href="#" src={userIcon} />
+          <Button className="account">Личный кабинет</Button>
         </div>
       </div>
     </div>
