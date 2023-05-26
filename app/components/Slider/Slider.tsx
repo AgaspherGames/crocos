@@ -47,16 +47,17 @@ const Slider: React.FC<SliderProps> = () => {
     <div className="slider">
       <div className="slider-wrapper">
         <div
-          style={{ marginLeft: `${-(currentSlide * 1085)}px` }}
+          style={{ transform: `translateX(${-((currentSlide/slides.length)*100)}%)` }}
           className="slide-line"
         >
           {slides.map((el) => (
-            <Slide {...el} />
+            <Slide key={el.src} {...el} />
           ))}
         </div>
+
       </div>
+        <button className="slider-btn left" onClick={decrementSlide}><Arrow color="#00A2E4" /></button>
       <button className="slider-btn right" onClick={incrementSlide}><Arrow color="white" rotate={180} /></button>
-      <button className="slider-btn left" onClick={decrementSlide}><Arrow color="#00A2E4" /></button>
       <div className="line">
         <div style={{width: `${(currentSlide/(slides.length-1))*100}%` }} className="inner"/>
       </div>

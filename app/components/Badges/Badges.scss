@@ -1,0 +1,28 @@
+.badge {
+  padding: 10px 20px;
+  color: white;
+  border: 1px solid #f4f4f7;
+  border-radius: 8px;
+  width: fit-content;
+  &.top {
+    background: radial-gradient(
+      70.26% 224.84% at 27.18% 37%,
+      #c400e4 23.34%,
+      #a900e4 100%
+    );
+  }
+  &.new {
+    background: radial-gradient(
+      70.26% 224.84% at 27.18% 37%,
+      #00e4a0 23.34%,
+      #00e4d6 100%
+    );
+  }
+  &.sale {
+    background: radial-gradient(
+      70.26% 224.84% at 27.18% 37%,
+      #e40089 23.34%,
+      #e40000 100%
+    );
+  }
+}

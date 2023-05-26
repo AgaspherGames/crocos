@@ -1,0 +1,94 @@
+.slider {
+  // height: 413px;
+  margin-top: 24px;
+  position: relative;
+
+  .slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+
+    .slide-line {
+      display: flex;
+      transition: all 0.5s ease;
+
+      .slide {
+        width: 90vw;
+        margin-right: 12px;
+        height: 413px;
+        position: relative;
+        background-size: contain;
+        border-radius: 24px;
+        max-width: 1024px;
+
+        @media only screen and (min-width: 1024px) {
+          width: 80vw;
+        }
+
+        div {
+          position: absolute;
+          top: 50%;
+          left: 40px;
+          transform: translateY(-50%);
+          width: 80%;
+        }
+        p {
+          width: 100%;
+          color: white;
+          font-weight: 500;
+
+          @media only screen and (min-width: 1024px) {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  .slider-btn {
+    border-radius: 400px;
+    margin-top: 24px;
+    width: 51px;
+    height: 51px;
+    border: 0;
+    box-shadow: 16px 16px 50px rgba(0, 0, 0, 0.1);
+    top: 206px;
+  }
+
+  .left {
+    background: white;
+  }
+  .right {
+    margin-left: 20px;
+    right: 0;
+    background: #00a2e4;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .slider-btn {
+      position: absolute;
+      margin-top: 0;
+    }
+    .left {
+      transform: translate(-50%, -50%);
+    }
+    .right {
+      margin-left: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  .line {
+    background-color: #ededed;
+    width: 100%;
+    height: 8px;
+    margin-top: 24px;
+
+    .inner {
+      background-color: #00a2e4;
+      height: 8px;
+      transition: all 0.3s ease;
+    }
+  }
+}

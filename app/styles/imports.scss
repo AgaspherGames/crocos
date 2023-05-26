@@ -1,4 +1,8 @@
-@import './Header.scss';
-@import './Select.scss';
-@import './NavBar.scss';
-@import './Slider.scss';
+@import '@/app/components/Header/Header.scss';
+@import '@/app/components/Select/Select.scss';
+@import '@/app/components/NavBar/NavBar.scss';
+@import '@/app/components/Slider/Slider.scss';
+@import '@/app/components/Services/Services.scss';
+@import '@/app/components/Title/Title.scss';
+@import '@/app/components/SecuritySection/SecuritySection.scss';
+@import '@/app/components/Badges/Badges.scss';
