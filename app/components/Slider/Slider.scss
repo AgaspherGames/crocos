@@ -4,13 +4,13 @@
   position: relative;
 
   .slider-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: flex;
+    // position: relative;
+    // // overflow: hidden;
+    // display: flex;
 
     .slide-line {
       display: flex;
-      transition: all 0.5s ease;
+      // transition: all 0.5s ease;
 
       .slide {
         width: 90vw;
@@ -34,14 +34,23 @@
         }
         p {
           width: 100%;
+          margin-bottom: 24px;
           color: white;
           font-weight: 500;
+          font-size: 20px;
 
           @media only screen and (min-width: 1024px) {
             font-size: 32px;
           }
         }
       }
+    }
+  }
+
+  .swiper-slide {
+    width: 90vw;
+    @media only screen and (min-width: 1024px) {
+      width: 80vw;
     }
   }
 
@@ -53,6 +62,7 @@
     border: 0;
     box-shadow: 16px 16px 50px rgba(0, 0, 0, 0.1);
     top: 206px;
+    z-index: 10;
   }
 
   .left {
@@ -84,11 +94,16 @@
     width: 100%;
     height: 8px;
     margin-top: 24px;
+    display: none;
 
     .inner {
       background-color: #00a2e4;
       height: 8px;
       transition: all 0.3s ease;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      display: block;
     }
   }
 }

@@ -1,21 +1,68 @@
-.security{
-  .buttons{
+.security {
+  .top-side {
+    @extend %flex-center;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  .buttons {
     display: flex;
-    gap: 12px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+    @media screen and (min-width: 1024px) {
+      gap: 12px;
+      width: fit-content;
+    }
   }
 
-  .card{
-    width: clamp(180px, 100%, 330px);
-    padding: 35px;
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 38px;
   }
 
-  .card-header{
+  .card {
+    box-sizing: border-box;
+    width: clamp(180px, 100%, 380px);
+    padding: 35px 35px 15px;
+    background: white;
+
+    box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+
+    @media screen and (min-width: 1024px) {
+      width: 330px;
+    }
+  }
+
+  .card-header {
     display: flex;
     justify-content: space-between;
   }
 
-  .rating{
-    border: 1px solid #D5D5D5;
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    margin-left: -35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: calc(100% + 70px);
+    background-color: #f4f4f7;
+  }
+
+  .rating {
+    border: 1px solid #d5d5d5;
     border-radius: 1000px;
     display: flex;
     justify-content: center;
@@ -23,4 +70,43 @@
     width: 40px;
     height: 40px;
   }
+
+  .price {
+    display: flex;
+    align-items: center;
+
+    .price-text {
+      margin: 16px 0 16px 6px;
+    }
+    .price-label {
+      color: #d4d4d4;
+    }
+  }
+
+  .card-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .swiper-slide {
+    width: clamp(180px, 100%, 330px);
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+
+    img {
+      margin-left: 12px;
+    }
+  }
+}
+.security-bold {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #0e0f31;
 }

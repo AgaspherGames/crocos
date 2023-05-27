@@ -3,6 +3,18 @@
   font-size: 18px;
 }
 
+html{
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
 main {
   width: 98%;
   margin: auto;
@@ -13,6 +25,11 @@ main {
 
 a {
   text-decoration: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 button{
@@ -39,12 +56,17 @@ button{
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  padding: 15px 25px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   height: fit-content;
+  background: transparent;
 
-  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  white-space: nowrap;
   border: 0;
 
   &[data-outline="true"] {
@@ -63,6 +85,10 @@ button{
     border-color: #00e49f;
     color: #00e49f;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding: 15px 25px;
+  }
 }
 
 .flex {
@@ -74,3 +100,5 @@ button{
 .justify-between {
   justify-content: space-between;
 }
+
+

@@ -1,24 +1,53 @@
-import React from 'react';
-import Button from '../../Button/Button';
-import TopBadge from '../../Badges/TopBadge';
-import Rating from './Rating';
-interface SecurityCardProps {}
+import React from "react";
+import Button from "../../Button/Button";
+import TopBadge from "../../Badges/TopBadge";
+import Rating from "./Rating";
+import Image from "next/image";
+import FlatButton from "../../OutlineButton/FlatButton";
+import SendIcon from '../../../icons/send.svg' 
 
-const SecurityCard: React.FC<SecurityCardProps> = () => {
-  return ( <div className='card'>
+export interface SecurityCardProps {
+  badge: {
+    text: string
+    type: "top" | "sale" | "new"
+  }
+  rating: number;
+  price: string;
+  text: string;
+  id: number
+}
+
+const SecurityCard: React.FC<SecurityCardProps> = ({badge,rating,price,text}) => {
+  return (
+    <div className="card">
       <div className="card-header">
-        <TopBadge type='top'>Топ 10</TopBadge>
-        <Rating/>
+        <TopBadge type={badge.type}>{badge.text}</TopBadge>
+        <Rating rating={rating} />
       </div>
       <div className="price">
-        {/* <Image width={60} height={}/> */}
+        <Image
+          alt="security"
+          src={"/assets/services/securityIcon.png"}
+          width={60}
+          height={60}
+        />
+        <div className="price-text">
+          <p className="security-bold">Security</p>
+          <p className="price-label">{price}</p>
+        </div>
       </div>
       <div className="info">
-
+        <p>
+          {text}
+        </p>
       </div>
-      <Button>Посмотреть улсуги</Button>
-      
-  </div> );
-}
+      <hr />
+      <div className="card-bottom">
+        <Button>Посмотреть улсуги</Button>
+        <FlatButton color="orange" >Онлайн заявка <Image  alt="send icon" src={SendIcon} width={20} height={20} /> </FlatButton>
+      </div>
+    </div>
+  );
+};
 
 export default SecurityCard;

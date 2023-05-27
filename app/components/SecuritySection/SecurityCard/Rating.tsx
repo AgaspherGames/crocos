@@ -1,10 +1,10 @@
-import React from 'react';
-interface RatingProps {}
-
-const Rating: React.FC<RatingProps> = () => {
-  return ( <div className='rating'>
-        4.7
-  </div> );
+import React from "react";
+interface RatingProps {
+  rating: number;
 }
+
+const Rating: React.FC<RatingProps> = ({ rating }) => {
+  return <div className="rating">{rating}</div>;
+};
 
 export default Rating;

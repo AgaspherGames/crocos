@@ -1,22 +1,87 @@
 import Title from "@/app/components/Title/Title";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import geoIcon from "@/app/icons/geo.svg";
 import Image from "next/image";
 import FlatButton from "../OutlineButton/FlatButton";
-import SecurityCard from "./SecurityCard/SecurityCard";
+import SecurityCard, { SecurityCardProps } from "./SecurityCard/SecurityCard";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import SliderWrapper from "../SliderWrapper/SliderWrapper";
+
 interface SecuritySectionProps {}
 
 const SecuritySection: React.FC<SecuritySectionProps> = () => {
+  const [cards, setCards] = useState<SecurityCardProps[]>([
+    {
+      id: 1,
+      badge: {
+        text: "Топ 10",
+        type: "top",
+      },
+      rating: 4.7,
+      price: "от 5 000 тнг.",
+      text: "Физическая охрана от 300 000 тнг./мес. Пультовая охрана от 10 000 тнг./мес. Системы безопасности. Установка, монтаж и обслуживание.",
+    },
+    {
+      id: 2,
+      badge: {
+        text: "NEW",
+        type: "new",
+      },
+      rating: 4.2,
+      price: "от 5 000 тнг.",
+      text: "Физическая охрана от 300 000 тнг./мес. Пультовая охрана от 10 000 тнг./мес. Системы безопасности. Установка, монтаж и обслуживание.",
+    },
+    {
+      id: 3,
+      badge: {
+        text: "Акция",
+        type: "sale",
+      },
+      rating: 4.1,
+      price: "от 5 000 тнг.",
+      text: "Физическая охрана от 300 000 тнг./мес. Пультовая охрана от 10 000 тнг./мес. Системы безопасности. Установка, монтаж и обслуживание.",
+    },
+    {
+      id: 4,
+      badge: {
+        text: "Топ 10",
+        type: "top",
+      },
+      rating: 4.9,
+      price: "от 5 000 тнг.",
+      text: "Физическая охрана от 300 000 тнг./мес. Пультовая охрана от 10 000 тнг./мес. Системы безопасности. Установка, монтаж и обслуживание.",
+    },
+  ]);
+
+  const [windowSize, setWindowSize] = useState(0);
+
+  const swiperRef = useRef<SwiperRef>(null);
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  });
+
+  const slides = ~~((windowSize - 200) / 350);
+  console.log(slides);
+
+  function incrementSlide() {
+    swiperRef.current?.swiper.slideNext();
+  }
+  function decrementSlide() {
+    swiperRef.current?.swiper.slidePrev();
+  }
+
   return (
     <div className="security">
-      <div className="flex justify-between items-center">
+      <div className="top-side">
         <Title text="Охранные компании вашего города" />
         <div className="buttons">
           <FlatButton outline>Смотреть все</FlatButton>
           <FlatButton outline color="orange">
             Показать на карте
             <svg
-            style={{marginLeft: '8px'}}
+              style={{ marginLeft: "8px" }}
               width="16"
               height="18"
               viewBox="0 0 16 18"
@@ -31,9 +96,16 @@ const SecuritySection: React.FC<SecuritySectionProps> = () => {
           </FlatButton>
         </div>
       </div>
-      <div className="cards">
-        <SecurityCard/>
-      </div>
+      <SliderWrapper decrement={decrementSlide} increment={incrementSlide} swiperRef={swiperRef}  >
+        <Swiper ref={swiperRef} spaceBetween={0} slidesPerView={slides || 1} className="swiper">
+          {cards.map((card) => (
+            <SwiperSlide key={card.id}>
+              <SecurityCard {...card} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </SliderWrapper>
+      <div className="cards"></div>
     </div>
   );
 };
