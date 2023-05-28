@@ -2,32 +2,97 @@
   .react-tabs__tab-list {
     list-style: none;
     display: flex;
+    // display: grid;
+    // grid-template-columns: 2fr 2fr 3fr;
     gap: 12px;
     margin: 0;
+    padding: 0;
+  }
+
+  .react-tabs__tab {
+    margin: 5px 0 30px;
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-flex; 
+
+    &:first-child{
+      white-space: nowrap;
+    }
+    
+    @media only screen and (min-width: 1024px) {
+      font-size: 20px;
+      
+    }
+  }
+
+  .react-tabs__tab--selected {
+    color: $light-blue;
+    outline: 0;
   }
 
   .cards {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    @media only screen and (min-width: 1024px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      // justify-content: space-between;
+    }
   }
 
   .card {
     height: 277px;
-    background-color: white;
-    box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.03);
-    border-radius: 20px;
     width: 100%;
+    max-width: 460px;
+    transition: all .3s ease;
+
     padding: 36px;
     box-sizing: border-box;
-    max-width: 460px;
+    background-color: #f8f7f7;
+    box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+
+    :not(.security-bold) {
+      font-size: 14px;
+    }
+    
+    &:hover{
+      background: white;
+    }
+
+    @media screen and (min-width: 1740px) {
+      max-width: 520px;
+
+      :not(.security-bold) {
+        font-size: 18px;
+      }
+
+    }
   }
 
-  .card-top{
+  .card-top {
     display: flex;
     gap: 25px;
   }
+  .security {
+    display: flex;
+  }
 
-  button{
+  .price{
+    color: $orange;
+    font-weight: 600;
+  }
+
+  button {
     padding: 8px;
     gap: 12px;
   }

@@ -10,6 +10,7 @@ import geoIcon from "../../icons/geo.svg";
 import userIcon from "../../icons/user.svg";
 import Button from "../Button/Button";
 import Select from "../Select/Select";
+import GeoIcon from "@/app/icons/GeoIcon";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
@@ -43,13 +44,14 @@ const Header: React.FC<HeaderProps> = () => {
           />
         </div>
         <div className="geo-label">
-          <Icon
+          {/* <Icon
             alt="Facebook icon"
             height={40}
             width={18}
             src={geoIcon}
             href="https://www.whatsapp.com/?lang=ru"
-          />
+          /> */}
+          <GeoIcon height={30} width={20} color="#00a2e4" />
           <p className="city">Астана</p>
         </div>
         <div className="flex buttons">

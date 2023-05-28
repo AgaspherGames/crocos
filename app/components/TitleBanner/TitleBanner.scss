@@ -1,0 +1,79 @@
+.title-banner {
+  margin: 40px 0;
+  position: relative;
+  width: 100%;
+  height: 163px;
+  background: radial-gradient(
+      70.26% 224.84% at 27.18% 37%,
+      #00a2e4 23.34%,
+      #2000e4 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  border-radius: 20px;
+  overflow: hidden;
+
+  .content {
+    @extend %flex-center;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    height: 100%;
+    color: #ffffff;
+    flex-direction: column;
+    transform: translateY(12px);
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 32px;
+  }
+
+  p {
+    width: 80%;
+    font-size: 16px;
+    background: #0040e4;
+    padding: 17px 15px;
+    transform: translateY(-14px);
+    z-index: -1;
+  }
+
+  @media screen and (min-width: 1024px) {
+    h2 {
+      font-size: 64px;
+    }
+    p {
+      transform: translateY(-27px);
+      font-size: 32px;
+      padding: 20px 15px;
+      width: auto;
+    }
+  }
+
+  .bg-image {
+    $url: data-url;
+    position: absolute;
+    z-index: 0;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-repeat: no-repeat !important;
+
+    &[data-type="right"] {
+      background-size: 72% !important;
+      background-position: right 40% !important;
+    }
+    &[data-type="left"] {
+      background-size: 58% !important;
+      background-position: left 40% !important;
+    }
+    &[data-type="full"] {
+      background-size: 100% !important;
+      background-position: center !important;
+      mix-blend-mode: overlay;
+    }
+  }
+}

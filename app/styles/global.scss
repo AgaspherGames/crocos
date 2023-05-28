@@ -3,21 +3,25 @@
   font-size: 18px;
 }
 
-html{
-  background-color: #F5F5F5;
+html {
+  background-color: #f5f5f5;
   overflow-x: hidden;
   width: 100vw;
 }
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
-
 main {
-  width: 98%;
+  width: 96%;
   margin: auto;
+  color: $dark-blue;
   @media only screen and (min-width: 1024px) {
     width: calc(98% - 80px);
   }
@@ -32,7 +36,7 @@ p {
   padding: 0;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
@@ -40,7 +44,7 @@ button{
   padding: 15px 25px;
   background: radial-gradient(
     70.26% 224.84% at 27.18% 37%,
-    #00a2e4 23.34%,
+    $light-blue 23.34%,
     #2000e4 100%
   );
   border: 0;
@@ -70,20 +74,20 @@ button{
   border: 0;
 
   &[data-outline="true"] {
-    border: 1px solid #00a2e4;
+    border: 1px solid $light-blue;
   }
 
   &[data-color="blue"] {
-    border-color: #00a2e4;
-    color: #00a2e4;
+    border-color: $light-blue;
+    color: $light-blue;
   }
   &[data-color="orange"] {
     border-color: #c96332;
     color: #c96332;
   }
   &[data-color="green"] {
-    border-color: #00e49f;
-    color: #00e49f;
+    border-color: $light-green;
+    color: $light-green;
   }
 
   @media screen and (min-width: 1024px) {
@@ -100,5 +104,4 @@ button{
 .justify-between {
   justify-content: space-between;
 }
-
 
