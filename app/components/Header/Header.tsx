@@ -44,13 +44,6 @@ const Header: React.FC<HeaderProps> = () => {
           />
         </div>
         <div className="geo-label">
-          {/* <Icon
-            alt="Facebook icon"
-            height={40}
-            width={18}
-            src={geoIcon}
-            href="https://www.whatsapp.com/?lang=ru"
-          /> */}
           <GeoIcon height={30} width={20} color="#00a2e4" />
           <p className="city">Астана</p>
         </div>

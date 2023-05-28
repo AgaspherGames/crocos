@@ -7,7 +7,6 @@ import Arrow from "./Arrow/Arrow";
 
 import { Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
-import "swiper/css";
 import SliderWrapper from "../SliderWrapper/SliderWrapper";
 
 interface SliderProps {}

@@ -1,0 +1,50 @@
+.industry-section {
+  .card {
+    // width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+
+    .content {
+      padding: 35px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 31px;
+    }
+
+    .category {
+      font-size: 14px;
+      line-height: 18px;
+      color: #d5d5d5;
+    }
+    .date {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #0e0f31;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #0e0f31;
+    }
+
+    .text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: #0e0f31;
+      margin-bottom: 28px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 0px 0px 20px 20px;
+      object-fit: cover;
+    }
+  }
+}

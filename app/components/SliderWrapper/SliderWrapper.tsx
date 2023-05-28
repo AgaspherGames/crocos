@@ -20,6 +20,7 @@ interface SliderWrapperProps {
   increment: React.MouseEventHandler<HTMLButtonElement>;
   decrement: React.MouseEventHandler<HTMLButtonElement>;
   progressBar?: number;
+  onlyMobileArrow?: boolean;
 }
 
 const SliderWrapper: React.FC<SliderWrapperProps> = ({
@@ -28,6 +29,7 @@ const SliderWrapper: React.FC<SliderWrapperProps> = ({
   increment,
   decrement,
   progressBar,
+  onlyMobileArrow=false,
 }) => {
   console.log(progressBar);
 
@@ -36,10 +38,10 @@ const SliderWrapper: React.FC<SliderWrapperProps> = ({
       <div className="slider-wrapper">
         <div className="slide-line">{children}</div>
       </div>
-      <button className="slider-btn left" onClick={decrement}>
+      <button className={`slider-btn left ${onlyMobileArrow?'only-mobile':''} `} onClick={decrement}>
         <Arrow color="#00A2E4" />
       </button>
-      <button className="slider-btn right" onClick={increment}>
+      <button className={`slider-btn right ${onlyMobileArrow?'only-mobile':''} `} onClick={increment}>
         <Arrow color="white" rotate={180} />
       </button>
       {progressBar !== undefined && (

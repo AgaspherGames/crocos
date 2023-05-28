@@ -1,24 +1,32 @@
 .security {
-  .top-side {
-    @extend %flex-center;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    @media screen and (min-width: 1024px) {
-      flex-direction: row;
-    }
-  }
+  // .top-side {
+  //   @extend %flex-center;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   flex-wrap: wrap;
+  //   @media screen and (min-width: 1024px) {
+  //     flex-direction: row;
+  //   }
+  // }
 
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 40px;
-    @media screen and (min-width: 1024px) {
-      gap: 12px;
-      width: fit-content;
-    }
-  }
+  // .buttons {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   width: 100%;
+    
+  //   button{
+  //     width: fit-content;
+  //   }
+
+  //   svg {
+  //     margin-left: 12px;
+  //   }
+
+  //   @media screen and (min-width: 1024px) {
+  //     gap: 12px;
+  //     width: fit-content;
+  //   }
+  // }
 
   .cards {
     display: flex;
@@ -98,10 +106,6 @@
 
   button {
     width: 100%;
-
-    svg {
-      margin-left: 12px;
-    }
   }
 }
 .security-bold {

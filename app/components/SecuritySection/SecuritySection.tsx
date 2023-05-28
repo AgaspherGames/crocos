@@ -8,6 +8,8 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SliderWrapper from "../SliderWrapper/SliderWrapper";
 import GeoIcon from "@/app/icons/GeoIcon";
+import TitleButtons from "../TitleButtons/TitleButtons";
+import { title } from "process";
 
 interface SecuritySectionProps {}
 
@@ -75,18 +77,29 @@ const SecuritySection: React.FC<SecuritySectionProps> = () => {
 
   return (
     <div className="security">
-      <div className="top-side">
-        <Title text="Охранные компании вашего города" />
-        <div className="buttons">
-          <FlatButton outline>Смотреть все</FlatButton>
-          <FlatButton outline color="orange">
-            Показать на карте
-            <GeoIcon/>
-          </FlatButton>
-        </div>
-      </div>
-      <SliderWrapper decrement={decrementSlide} increment={incrementSlide} swiperRef={swiperRef}  >
-        <Swiper ref={swiperRef} spaceBetween={0} slidesPerView={Math.min((slides || 1),cards.length )} className="swiper">
+      <TitleButtons
+        buttons={
+          <>
+            <FlatButton outline>Смотреть все</FlatButton>
+            <FlatButton outline color="orange">
+              Показать на карте
+              <GeoIcon />
+            </FlatButton>
+          </>
+        }
+        title="Охранные компании вашего города"
+      />
+      <SliderWrapper
+        decrement={decrementSlide}
+        increment={incrementSlide}
+        swiperRef={swiperRef}
+      >
+        <Swiper
+          ref={swiperRef}
+          spaceBetween={0}
+          slidesPerView={Math.min(slides || 1, cards.length)}
+          className="swiper"
+        >
           {cards.map((card) => (
             <SwiperSlide key={card.id}>
               <SecurityCard {...card} />
