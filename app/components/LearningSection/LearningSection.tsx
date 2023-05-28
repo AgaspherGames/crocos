@@ -30,7 +30,7 @@ const LearningSection: React.FC<LearningSectionProps> = () => {
     <div className="learning-section">
       <Title text="Обучение" />
       <div className="cards">
-        {cards.map(card=> <LearningCard {...card} /> )}
+        {cards.map(card=> <LearningCard key={card.imgUrl} {...card} /> )}
       </div>
     </div>
   );
