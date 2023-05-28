@@ -100,22 +100,22 @@ const Vacancies: React.FC<VacanciesProps> = () => {
         </TabList>
         <TabPanel>
           <TabContent>
-            {cards.looking.map((el) => (
-              <VacancyCard {...el} />
+            {cards.looking.map((el, ind) => (
+              <VacancyCard key={ind} {...el} />
             ))}
           </TabContent>
         </TabPanel>
         <TabPanel>
           <TabContent>
-          {cards.need.map((el) => (
-              <VacancyCard {...el} />
+          {cards.need.map((el, ind) => (
+              <VacancyCard key={ind} {...el} />
             ))}
           </TabContent>
         </TabPanel>
         <TabPanel>
           <TabContent>
-          {cards.other.map((el) => (
-              <VacancyCard {...el} />
+          {cards.other.map((el, ind) => (
+              <VacancyCard key={ind} {...el} />
             ))}
           </TabContent>
         </TabPanel>
