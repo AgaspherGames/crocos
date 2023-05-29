@@ -96,7 +96,7 @@ const SecuritySection: React.FC<SecuritySectionProps> = () => {
       >
         <Swiper
           ref={swiperRef}
-          spaceBetween={0}
+          spaceBetween={30}
           slidesPerView={Math.min(slides || 1, cards.length)}
           className="swiper"
         >

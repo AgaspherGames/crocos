@@ -31,13 +31,14 @@
   .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: $default-gap;
     margin-top: 38px;
   }
 
   .card {
     box-sizing: border-box;
-    width: clamp(180px, 100%, 380px);
+    // width: clamp(180px, 100%, 380px);
+    width: 100%;
     padding: 35px 35px 15px;
     background: white;
 
@@ -45,7 +46,7 @@
     border-radius: 20px;
 
     @media screen and (min-width: 1024px) {
-      width: 330px;
+      // width: 330px;
     }
   }
 

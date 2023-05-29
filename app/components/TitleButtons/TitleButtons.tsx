@@ -4,7 +4,7 @@ import { title } from "process";
 interface TitleButtonsProps extends React.HTMLAttributes<HTMLDivElement> {
   buttons: React.ReactNode;
   title: string;
-  nowrap?: boolean
+  nowrap?: boolean    
 }
 
 const TitleButtons: React.FC<TitleButtonsProps> = ({ children, buttons, title, nowrap=false }) => {

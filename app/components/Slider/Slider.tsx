@@ -62,7 +62,7 @@ const Slider: React.FC<SliderProps> = () => {
             pagination={{
               clickable: true,
             }}
-            spaceBetween={24}
+            spaceBetween={30}
             navigation={true}
             modules={[Pagination, Navigation]}
             className="swiper"

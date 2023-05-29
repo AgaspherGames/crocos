@@ -1,0 +1,46 @@
+.accordion-section {
+  * {
+    transition: all 0.3s ease;
+  }
+
+  .szh-accordion__item-heading {
+    background: white;
+    padding: 40px;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+
+    button {
+      background: transparent;
+      border: 0;
+      outline: 0;
+
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+
+      color: #0e0f31;
+    }
+  }
+
+  .szh-accordion__item--expanded {
+    .szh-accordion__item-heading {
+      border-radius: 20px 20px 0 0;
+      background: black;
+      box-shadow: 0px 16px 60px rgba(0, 0, 0, 0.05);
+      button {
+        color: white;
+      }
+    }
+  }
+
+  .szh-accordion__item {
+    // border-radius: 20px;
+    margin-bottom: 30px;
+    // overflow: hidden;
+  }
+  .szh-accordion__item-content {
+    padding: 40px;
+    background: white;
+    border-radius: 0 0 20px 20px;
+  }
+}

@@ -134,7 +134,7 @@ const IndustrySection: React.FC<IndustrySectionProps> = () => {
               pagination={{
                 clickable: true,
               }}
-              spaceBetween={24}
+              spaceBetween={30}
               navigation={true}
               modules={[Pagination, Navigation]}
               className="swiper"

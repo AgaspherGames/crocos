@@ -103,7 +103,7 @@ const Vacancies: React.FC<VacanciesProps> = () => {
             {cards.looking.map((el, ind) => (
               <VacancyCard key={ind} {...el} />
             ))}
-          </TabContent>
+          </TabContent> 
         </TabPanel>
         <TabPanel>
           <TabContent>
