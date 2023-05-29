@@ -3,14 +3,40 @@
     transition: all 0.3s ease;
   }
 
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .szh-accordion__item-heading {
     background: white;
-    padding: 40px;
-    transition: all 0.3s ease;
+    
+    // transition: all 0.3s ease;
     border-radius: 20px;
 
+    path {
+      fill: black;
+    }
+
+    svg{
+      rotate: -90deg;
+    }
+
+    &:hover {
+      background: $light-blue;
+      path {
+        fill: white;
+      }
+      button {
+        color: white;
+      }
+    }
+
     button {
+      padding: 40px;
+      width: 100%;
       background: transparent;
+      text-align: start;
       border: 0;
       outline: 0;
 
@@ -19,17 +45,29 @@
       line-height: 20px;
 
       color: #0e0f31;
+      transition: all .1s ease;
+      *{
+
+        transition: all .1s ease;
+      }
     }
   }
 
   .szh-accordion__item--expanded {
     .szh-accordion__item-heading {
       border-radius: 20px 20px 0 0;
-      background: black;
+      // background: black;
+      background: $light-blue;
       box-shadow: 0px 16px 60px rgba(0, 0, 0, 0.05);
       button {
         color: white;
       }
+      path {
+        fill: white;
+      }
+      svg{
+      rotate: 90deg;
+    }
     }
   }
 
