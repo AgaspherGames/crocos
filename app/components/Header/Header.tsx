@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Logo from "./Logo/Logo";
 import Icon from "@/app/icons/Icon";
@@ -11,6 +11,7 @@ import userIcon from "../../icons/user.svg";
 import Button from "../Button/Button";
 import Select from "../Select/Select";
 import GeoIcon from "@/app/icons/GeoIcon";
+import CitySelect from "./CitySelect/CitySelect";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
@@ -19,7 +20,7 @@ const Header: React.FC<HeaderProps> = () => {
       <div>
         <Logo />
       </div>
-      <div className="info"> 
+      <div className="info">
         <div className="social-media">
           <Icon
             alt="WhatsApp icon"
@@ -43,13 +44,17 @@ const Header: React.FC<HeaderProps> = () => {
             href="https://www.whatsapp.com/?lang=ru"
           />
         </div>
-        <div className="geo-label">
-          <GeoIcon height={30} width={20} color="#00a2e4" />
-          <p className="city">Астана</p>
-        </div>
+        
+          <CitySelect/>
         <div className="flex buttons">
           <Select />
-          <Icon width={25}height={25} alt="user icon" href="#" src={userIcon} />
+          <Icon
+            width={25}
+            height={25}
+            alt="user icon"
+            href="#"
+            src={userIcon}
+          />
           <Button className="account">Личный кабинет</Button>
         </div>
       </div>

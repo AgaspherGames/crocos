@@ -12,20 +12,32 @@ const AccordionSection: React.FC<AccordionProps> = () => {
         title="FAQ"
         buttons={<FlatButton outline>Смотреть все</FlatButton>}
       />
-      <Accordion>
+      <Accordion transition transitionTimeout={250} allowMultiple>
         <AccordionItem
           header={
             <div className="accordion-header">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
               viverra sed ultricies elit praesent scelerisque. Id enim, est a,
               aenean cras rhoncus?
-              <ArrowIcon />
+              <div className="arrow">
+                <ArrowIcon />
+              </div>
             </div>
           }
         >
           <h3>Aliquam</h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Dui ipsum in id nam risus quis facilisis placerat. Lobortis elit
+          rhoncus, lectus elit, tristique est, tempus. Pharetra faucibus mauris
+          id nulla sed. Sapien diam lorem ac risus senectus arcu, mi. Rhoncus,
+          nunc proin iaculis amet egestas sit. Velit bibendum pretium vel non
+          ligula neque faucibus phasellus. Placerat lectus iaculis tellus
+          imperdiet in ut aliquam volutpat dui. Arcu nulla maecenas feugiat et.
+          Dis massa quam ut nam eget. At viverra aliquam ligula scelerisque at
+          quis felis eget sed. Tincidunt morbi vestibulum imperdiet mauris
+          ornare urna, orci amet morbi. Elementum, id massa justo orci. Nunc
+          arcu, libero, feugiat amet, egestas. Consectetur nisl quam integer
+          adipiscing posuere dictum iaculis placerat. Sagittis, tristique lectus
+          sociis commodo et sapien fames mauris.
         </AccordionItem>
 
         <AccordionItem
@@ -34,14 +46,25 @@ const AccordionSection: React.FC<AccordionProps> = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
               viverra sed ultricies elit praesent scelerisque. Id enim, est a,
               aenean cras rhoncus?
-              <ArrowIcon />
+              <div className="arrow">
+                <ArrowIcon />
+              </div>
             </div>
           }
         >
           <h3>Aliquam</h3>
-          Quisque eget luctus mi, vehicula mollis lorem. Proin fringilla vel
-          erat quis sodales. Nam ex enim, eleifend venenatis lectus vitae,
-          accumsan auctor mi.
+          Dui ipsum in id nam risus quis facilisis placerat. Lobortis elit
+          rhoncus, lectus elit, tristique est, tempus. Pharetra faucibus mauris
+          id nulla sed. Sapien diam lorem ac risus senectus arcu, mi. Rhoncus,
+          nunc proin iaculis amet egestas sit. Velit bibendum pretium vel non
+          ligula neque faucibus phasellus. Placerat lectus iaculis tellus
+          imperdiet in ut aliquam volutpat dui. Arcu nulla maecenas feugiat et.
+          Dis massa quam ut nam eget. At viverra aliquam ligula scelerisque at
+          quis felis eget sed. Tincidunt morbi vestibulum imperdiet mauris
+          ornare urna, orci amet morbi. Elementum, id massa justo orci. Nunc
+          arcu, libero, feugiat amet, egestas. Consectetur nisl quam integer
+          adipiscing posuere dictum iaculis placerat. Sagittis, tristique lectus
+          sociis commodo et sapien fames mauris.
         </AccordionItem>
 
         <AccordionItem
@@ -50,13 +73,25 @@ const AccordionSection: React.FC<AccordionProps> = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
               viverra sed ultricies elit praesent scelerisque. Id enim, est a,
               aenean cras rhoncus?
-              <ArrowIcon />
+              <div className="arrow">
+                <ArrowIcon />
+              </div>
             </div>
           }
         >
           <h3>Aliquam</h3>
-          Suspendisse massa risus, pretium id interdum in, dictum sit amet ante.
-          Fusce vulputate purus sed tempus feugiat.
+          Dui ipsum in id nam risus quis facilisis placerat. Lobortis elit
+          rhoncus, lectus elit, tristique est, tempus. Pharetra faucibus mauris
+          id nulla sed. Sapien diam lorem ac risus senectus arcu, mi. Rhoncus,
+          nunc proin iaculis amet egestas sit. Velit bibendum pretium vel non
+          ligula neque faucibus phasellus. Placerat lectus iaculis tellus
+          imperdiet in ut aliquam volutpat dui. Arcu nulla maecenas feugiat et.
+          Dis massa quam ut nam eget. At viverra aliquam ligula scelerisque at
+          quis felis eget sed. Tincidunt morbi vestibulum imperdiet mauris
+          ornare urna, orci amet morbi. Elementum, id massa justo orci. Nunc
+          arcu, libero, feugiat amet, egestas. Consectetur nisl quam integer
+          adipiscing posuere dictum iaculis placerat. Sagittis, tristique lectus
+          sociis commodo et sapien fames mauris.
         </AccordionItem>
       </Accordion>
     </div>

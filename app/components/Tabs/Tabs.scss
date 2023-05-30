@@ -1,0 +1,24 @@
+.tabs{
+
+  .tab-titles{
+    display: flex;
+    gap: 12px; 
+  }
+
+  .tab-title{
+    &.active{
+      color: $light-blue;
+    } 
+  }
+  
+  .tab-panel{
+
+    display: none;
+
+    &.active{
+      display: block;
+    }
+
+  }
+
+}

@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;
     margin: 0 6px;
+    position: relative;
 
     .city {
       margin-left: 13px;
@@ -56,6 +57,34 @@
       width: 120px;
       height: auto;
     }
+  }
+
+  .city-select {
+    padding: 35px 28px;
+    overflow: hidden;
+    background: #fff;
+    z-index: 10;
+
+    position: absolute;
+    top: 40px;
+    width: max-content;
+
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.267);
+
+    .active{
+      color: $light-blue;
+    }
+
+    &.close {
+      max-height: 0;
+      padding: 0;
+    }
+
+    div{
+      cursor: pointer;
+    }
+
   }
 
   @media only screen and (max-width: 1024px) {

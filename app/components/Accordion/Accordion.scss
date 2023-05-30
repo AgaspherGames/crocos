@@ -10,7 +10,7 @@
 
   .szh-accordion__item-heading {
     background: white;
-    
+
     // transition: all 0.3s ease;
     border-radius: 20px;
 
@@ -18,7 +18,7 @@
       fill: black;
     }
 
-    svg{
+    svg {
       rotate: -90deg;
     }
 
@@ -45,10 +45,9 @@
       line-height: 20px;
 
       color: #0e0f31;
-      transition: all .1s ease;
-      *{
-
-        transition: all .1s ease;
+      transition: all 0.1s ease;
+      * {
+        transition: all 0.1s ease;
       }
     }
   }
@@ -65,20 +64,35 @@
       path {
         fill: white;
       }
-      svg{
-      rotate: 90deg;
-    }
+      svg {
+        rotate: 90deg;
+      }
     }
   }
 
   .szh-accordion__item {
     // border-radius: 20px;
     margin-bottom: 30px;
-    // overflow: hidden;
+    padding: 0.1px;
+  }
+  .arrow {
+    width: 13px;
+    height: 8px;
   }
   .szh-accordion__item-content {
     padding: 40px;
     background: white;
     border-radius: 0 0 20px 20px;
+  }
+
+  .szh-accordion__item--status-exiting {
+    .szh-accordion__item-content {
+      padding: 0 40px;
+    }
+  }
+  .szh-accordion__item--status-entering {
+    .szh-accordion__item-content {
+      padding: 40px 40px;
+    }
   }
 }

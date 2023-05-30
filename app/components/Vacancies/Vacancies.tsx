@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Title from "../Title/Title";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TabContent from "./TabContent";
 import VacancyCard, { VacancyCardProps } from "./VacancyCard/VacancyCard";
 import FlatButton from "../OutlineButton/FlatButton";
+import Tabs from "../Tabs/Tabs";
 interface VacanciesProps {}
 
 interface ICards {
@@ -88,11 +89,44 @@ const Vacancies: React.FC<VacanciesProps> = () => {
   return (
     <div className="vacansies">
       <div className="flex justify-between items-center">
-      <Title text="Вакансии" />
-      <FlatButton outline>Смотреть все</FlatButton>
-
+        <Title text="Вакансии" />
+        <FlatButton outline>Смотреть все</FlatButton>
       </div>
-      <Tabs defaultFocus={true}>
+      <Tabs
+        tabs={[
+          {
+            name: "Ищу работу",
+            tab: (
+              <TabContent>
+                {cards.looking.map((el, ind) => (
+                  <VacancyCard key={ind} {...el} />
+                ))}
+              </TabContent>
+            ),
+          },
+          {
+            name: "Требуются",
+            tab: (
+              <TabContent>
+                {cards.need.map((el, ind) => (
+                  <VacancyCard key={ind} {...el} />
+                ))}
+              </TabContent>
+            ),
+          },
+          {
+            name: "Сотрудники разных сфер",
+            tab: (
+              <TabContent>
+                {cards.other.map((el, ind) => (
+                  <VacancyCard key={ind} {...el} />
+                ))}
+              </TabContent>
+            ),
+          },
+        ]}
+      />
+      {/* <Tabs defaultFocus={true}>
         <TabList>
           <Tab>Ищу работу</Tab>
           <Tab>Требуются</Tab>
@@ -119,7 +153,7 @@ const Vacancies: React.FC<VacanciesProps> = () => {
             ))}
           </TabContent>
         </TabPanel>
-      </Tabs>
+      </Tabs> */}
     </div>
   );
 };
