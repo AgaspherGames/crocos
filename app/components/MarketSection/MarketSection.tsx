@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Title/Title";
-import FlatButton from "../OutlineButton/FlatButton";
+import FlatButton from "../FlatButton/FlatButton";
 import GeoIcon from "@/app/icons/GeoIcon";
 import MarketCard from "./MarketCard/MarketCard";
 import TitleButtons from "../TitleButtons/TitleButtons";
@@ -8,7 +8,7 @@ interface MarketSectionProps {}
 
 const MarketSection: React.FC<MarketSectionProps> = () => {
   return (
-    <div className="market-section">
+    <div id="market" className="market-section">
       <TitleButtons
         buttons={
           <>

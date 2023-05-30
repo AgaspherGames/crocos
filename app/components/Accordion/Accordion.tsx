@@ -1,7 +1,7 @@
 import React from "react";
 import TitleButtons from "../TitleButtons/TitleButtons";
 import { Accordion, AccordionItem } from "@szhsin/react-accordion";
-import FlatButton from "../OutlineButton/FlatButton";
+import FlatButton from "../FlatButton/FlatButton";
 import ArrowIcon from "@/app/icons/ArrowIcon";
 interface AccordionProps {}
 

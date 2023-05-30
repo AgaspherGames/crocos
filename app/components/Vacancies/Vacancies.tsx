@@ -3,7 +3,7 @@ import Title from "../Title/Title";
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TabContent from "./TabContent";
 import VacancyCard, { VacancyCardProps } from "./VacancyCard/VacancyCard";
-import FlatButton from "../OutlineButton/FlatButton";
+import FlatButton from "../FlatButton/FlatButton";
 import Tabs from "../Tabs/Tabs";
 interface VacanciesProps {}
 
@@ -87,7 +87,7 @@ const Vacancies: React.FC<VacanciesProps> = () => {
   });
 
   return (
-    <div className="vacansies">
+    <div id="vacansies" className="vacansies">
       <div className="flex justify-between items-center">
         <Title text="Вакансии" />
         <FlatButton outline>Смотреть все</FlatButton>

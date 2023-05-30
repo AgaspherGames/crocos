@@ -27,7 +27,7 @@ const LearningSection: React.FC<LearningSectionProps> = () => {
     },
   ]);
   return (
-    <div className="learning-section">
+    <div id="learning" className="learning-section">
       <Title text="Обучение" />
       <div className="cards">
         {cards.map(card=> <LearningCard key={card.imgUrl} {...card} /> )}

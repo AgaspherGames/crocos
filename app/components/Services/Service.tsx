@@ -19,7 +19,7 @@ const Service: React.FC<IService> = ({ text, src, href }) => {
       <Link href={href}>
         <div className="content">
           <p>{text}</p>
-          <Image width={77} height={24} alt="arrow" src={arrow} />
+          <Image className="arrow" width={77} height={24} alt="arrow" src={arrow} />
         </div>
       </Link>
     </div>

@@ -9,7 +9,7 @@
       #2000e4 100%
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  border-radius: 20px;
+  border-radius: $default-radius;
   overflow: hidden;
 
   .content {
@@ -61,6 +61,7 @@
     right: 0;
 
     background-repeat: no-repeat !important;
+    transition: all .3s ease;
 
     &[data-type="right"] {
       background-size: 72% !important;
@@ -74,6 +75,24 @@
       background-size: 100% !important;
       background-position: center !important;
       mix-blend-mode: overlay;
+    }
+  }
+  &:hover{
+    .bg-image {
+  
+      &[data-type="right"] {
+        background-size: 77% !important;
+        background-position: right 40% !important;
+      }
+      &[data-type="left"] {
+        background-size: 63% !important;
+        background-position: left 40% !important;
+      }
+      &[data-type="full"] {
+        background-size: 105% !important;
+        background-position: center !important;
+        mix-blend-mode: overlay;
+      }
     }
   }
 }

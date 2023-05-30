@@ -1,8 +1,30 @@
 .nav-bar {
-  display: flex;
-  gap: 10px;
-  a {
+  .links {
+    gap: 10px;
     display: none;
+    @media screen and (max-width: 1023px) {
+      &.opened {
+        padding: 50px;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        z-index: 100;
+        .social-media {
+          display: flex;
+          gap: $default-gap;
+        }
+      }
+    }
+  }
+
+  a {
     font-size: 20px;
     color: black;
   }
@@ -10,10 +32,11 @@
     width: 100%;
   }
   @media only screen and (min-width: 1024px) {
-    gap: 30px;
-    margin: 16px 0 16px;
-    a {
-      display: block;
+    .links {
+      display: flex;
+      position: static;
+      gap: $default-gap;
+      margin: 16px 0 16px;
     }
     .menu {
       display: none;

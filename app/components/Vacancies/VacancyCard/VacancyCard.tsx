@@ -1,5 +1,5 @@
 import React from "react";
-import FlatButton from "../../OutlineButton/FlatButton";
+import FlatButton from "../../FlatButton/FlatButton";
 import Image from "next/image";
 import GeoIcon from "@/app/icons/GeoIcon";
 export interface VacancyCardProps {

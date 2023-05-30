@@ -3,7 +3,7 @@ import Button from "../../Button/Button";
 import TopBadge from "../../Badges/TopBadge";
 import Rating from "./Rating";
 import Image from "next/image";
-import FlatButton from "../../OutlineButton/FlatButton";
+import FlatButton from "../../FlatButton/FlatButton";
 import SendIcon from '../../../icons/send.svg' 
 
 export interface SecurityCardProps {

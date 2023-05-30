@@ -44,7 +44,7 @@ const CitySelect: React.FC<CitySelectProps> = ({  }) => {
       }}
       className="geo-label"
     >
-      <GeoIcon height={30} width={20} color="#00a2e4" />
+      <GeoIcon height={30} width={20} className="light-blue" />
       <p className="city">{city.name}</p>
       <div
         onClick={(e) => e.stopPropagation()}

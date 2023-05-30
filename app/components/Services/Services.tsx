@@ -9,7 +9,7 @@ const Services: React.FC<ServicesProps> = () => {
     { src: "/assets/services/market.png", text: "Маркет", href: "#" },
   ]);
   return (
-    <div className="services">
+    <div id="services" className="services">
       {services.map((service) => (
         <Service key={service.src} {...service} />
       ))}

@@ -1,0 +1,41 @@
+.o-btn {
+  //outline button
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  background: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  white-space: nowrap;
+  border: 0;
+
+  &[data-outline="true"] {
+    border: 1px solid $light-blue;
+  }
+
+  &[data-color="blue"] {
+    border-color: $light-blue;
+    color: $light-blue;
+  }
+  &[data-color="orange"] {
+    border-color: $orange;
+    color: $orange;
+  }
+  &[data-color="green"] {
+    border-color: $light-green;
+    color: $light-green;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 15px 25px;
+  }
+}

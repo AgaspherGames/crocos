@@ -12,6 +12,10 @@ import Button from "../Button/Button";
 import Select from "../Select/Select";
 import GeoIcon from "@/app/icons/GeoIcon";
 import CitySelect from "./CitySelect/CitySelect";
+import WhatsappIcon from "@/app/icons/WhatsappIcon";
+import InstagramIcon from "@/app/icons/InstagramIcon";
+import FacebookIcon from "@/app/icons/FacebookIcon";
+import UserIcon from "@/app/icons/UserIcon";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
@@ -22,39 +26,14 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
       <div className="info">
         <div className="social-media">
-          <Icon
-            alt="WhatsApp icon"
-            height={20}
-            width={20}
-            src={whatsappIcon}
-            href="https://www.whatsapp.com/?lang=ru"
-          />
-          <Icon
-            alt="WhatsApp icon"
-            height={20}
-            width={20}
-            src={instagramIcon}
-            href="https://www.whatsapp.com/?lang=ru"
-          />
-          <Icon
-            alt="Facebook icon"
-            height={20}
-            width={10}
-            src={facebookIcon}
-            href="https://www.whatsapp.com/?lang=ru"
-          />
+          <WhatsappIcon className="orange" />
+          <InstagramIcon className="orange" />
+          <FacebookIcon className="orange" />
         </div>
-        
           <CitySelect/>
         <div className="flex buttons">
           <Select />
-          <Icon
-            width={25}
-            height={25}
-            alt="user icon"
-            href="#"
-            src={userIcon}
-          />
+          <UserIcon width={25} height={25} className="icon"/>
           <Button className="account">Личный кабинет</Button>
         </div>
       </div>

@@ -1,24 +1,23 @@
-.tabs{
-
-  .tab-titles{
+.tabs {
+  .tab-titles {
     display: flex;
-    gap: 12px; 
+    gap: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
   }
 
-  .tab-title{
-    &.active{
+  .tab-title {
+    &.active {
       color: $light-blue;
-    } 
+    }
   }
-  
-  .tab-panel{
 
+  .tab-panel {
     display: none;
 
-    &.active{
+    &.active {
       display: block;
     }
-
   }
-
 }

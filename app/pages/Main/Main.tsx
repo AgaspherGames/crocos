@@ -7,7 +7,7 @@ import Vacancies from "@/app/components/Vacancies/Vacancies";
 import TitleBanner from "@/app/components/TitleBanner/TitleBanner";
 import MarketSection from "@/app/components/MarketSection/MarketSection";
 import LearningSection from "@/app/components/LearningSection/LearningSection";
-// import IndustrySection from "@/app/components/IndustrySection/IndustrySection";
+import IndustrySection from "@/app/components/IndustrySection/IndustrySection";
 import Accordion from "@/app/components/Accordion/Accordion";
 import Footer from "@/app/components/Footer/Footer";
 import dynamic from "next/dynamic";
@@ -30,8 +30,8 @@ const Main: React.FC<MainProps> = () => {
       <TitleBanner text="Каталог охранных услуг" imgUrl="/assets/banners/market.png" type="left" /> */}
       <MarketSection/>
       <LearningSection/>
-      {/* <IndustrySection/> */}
-      <IndustrySectionLazy/>
+      <IndustrySection/>
+      {/* <IndustrySectionLazy/> */}
       <Accordion/>
       <Footer/>
     </div>

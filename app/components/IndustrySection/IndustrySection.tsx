@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TitleButtons from "../TitleButtons/TitleButtons";
-import FlatButton from "../OutlineButton/FlatButton";
+import FlatButton from "../FlatButton/FlatButton";
 import NewsCard, { NewsCardProps } from "./NewsCard/NewsCard";
 import SliderWrapper from "../SliderWrapper/SliderWrapper";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
@@ -98,7 +98,7 @@ const IndustrySection: React.FC<IndustrySectionProps> = () => {
   // console.log(slides);
 
   return (
-    <div className="industry-section">
+    <div id="news" className="industry-section">
       <TitleButtons
         title="Отраслевой журнал"
         buttons={<FlatButton outline>Смотреть все</FlatButton>}
