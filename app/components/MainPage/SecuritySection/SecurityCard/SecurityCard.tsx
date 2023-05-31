@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "../../Button/Button";
-import TopBadge from "../../Badges/TopBadge";
+import Button from "@/app/components/Button/Button";
+import TopBadge from "@/app/components/Badges/TopBadge";
 import Rating from "./Rating";
 import Image from "next/image";
-import FlatButton from "../../FlatButton/FlatButton";
-import SendIcon from '../../../icons/send.svg' 
+import FlatButton from "@/app/components/FlatButton/FlatButton";
+import SendIcon from '@/app/icons/send.svg' 
 
 export interface SecurityCardProps {
   badge: {

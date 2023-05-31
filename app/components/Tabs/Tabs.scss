@@ -5,6 +5,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
+    cursor: pointer;
   }
 
   .tab-title {
@@ -19,5 +20,9 @@
     &.active {
       display: block;
     }
+  }
+
+  .tab-panels{
+    margin-top: $default-gap;
   }
 }

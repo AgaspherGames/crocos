@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Title from "../Title/Title";
+import Title from "@/app/components/Title/Title";
 import LearningCard, { LearningCardProps } from "./LearningCard/LearningCard";
 interface LearningSectionProps {}
 

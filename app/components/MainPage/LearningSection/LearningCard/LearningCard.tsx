@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Button from "../../Button/Button";
+import Button from "@/app/components/Button/Button";
 import CourseBadge from "../CourseBadge/CourseBadge";
 export interface LearningCardProps {
   imgUrl: string;

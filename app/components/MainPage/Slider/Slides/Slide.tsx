@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { MouseEventHandler } from "react";
-import Button from "../../Button/Button";
+import Button from "../../../Button/Button";
 
 export interface IPost {
   src: string;

@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import TitleButtons from "../TitleButtons/TitleButtons";
-import FlatButton from "../FlatButton/FlatButton";
+import TitleButtons from "@/app/components/TitleButtons/TitleButtons";
+import FlatButton from "@/app/components/FlatButton/FlatButton";
 import NewsCard, { NewsCardProps } from "./NewsCard/NewsCard";
-import SliderWrapper from "../SliderWrapper/SliderWrapper";
+import SliderWrapper from "@/app/components/SliderWrapper/SliderWrapper";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import "swiper/css";
-import Tabs from "../Tabs/Tabs";
+import Tabs from "@/app/components/Tabs/Tabs";
 // import Slide from "../Slider/Slides/Slide";
 
 interface IndustrySectionProps {}
@@ -95,7 +95,6 @@ const IndustrySection: React.FC<IndustrySectionProps> = () => {
       imgUrl: "/assets/news/card-1.png",
     },
   ]);
-  // console.log(slides);
 
   return (
     <div id="news" className="industry-section">

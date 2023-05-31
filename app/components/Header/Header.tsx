@@ -16,6 +16,8 @@ import WhatsappIcon from "@/app/icons/WhatsappIcon";
 import InstagramIcon from "@/app/icons/InstagramIcon";
 import FacebookIcon from "@/app/icons/FacebookIcon";
 import UserIcon from "@/app/icons/UserIcon";
+import { links } from "@/app/constants/links";
+import SelectLang from "../SelectLang/SelectLang";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
@@ -26,14 +28,20 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
       <div className="info">
         <div className="social-media">
-          <WhatsappIcon className="orange" />
-          <InstagramIcon className="orange" />
-          <FacebookIcon className="orange" />
+          <a href={links.whatsapp}>
+            <WhatsappIcon className="orange" />
+          </a>
+          <a href={links.instagram}>
+            <InstagramIcon className="orange" />
+          </a>
+          <a href={links.facebook}>
+            <FacebookIcon className="orange" />
+          </a>
         </div>
-          <CitySelect/>
+        <CitySelect />
         <div className="flex buttons">
-          <Select />
-          <UserIcon width={25} height={25} className="icon"/>
+          <SelectLang/>
+          <UserIcon width={25} height={25} className="icon" />
           <Button className="account">Личный кабинет</Button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../Button/Button";
+import Button from "@/app/components/Button/Button";
 import Image from "next/image";
 export interface NewsCardProps {
   category: string;

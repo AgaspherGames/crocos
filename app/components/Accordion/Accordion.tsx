@@ -12,7 +12,7 @@ const AccordionSection: React.FC<AccordionProps> = () => {
         title="FAQ"
         buttons={<FlatButton outline>Смотреть все</FlatButton>}
       />
-      <Accordion transition transitionTimeout={250} allowMultiple>
+      <Accordion className="accordion" transition transitionTimeout={250} allowMultiple>
         <AccordionItem
           header={
             <div className="accordion-header">

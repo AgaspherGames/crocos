@@ -2,13 +2,13 @@ import Title from "@/app/components/Title/Title";
 import React, { useEffect, useRef, useState } from "react";
 import geoIcon from "@/app/icons/geo.svg";
 import Image from "next/image";
-import FlatButton from "../FlatButton/FlatButton";
+import FlatButton from "@/app/components/FlatButton/FlatButton";
 import SecurityCard, { SecurityCardProps } from "./SecurityCard/SecurityCard";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import SliderWrapper from "../SliderWrapper/SliderWrapper";
+import SliderWrapper from "@/app/components/SliderWrapper/SliderWrapper";
 import GeoIcon from "@/app/icons/GeoIcon";
-import TitleButtons from "../TitleButtons/TitleButtons";
+import TitleButtons from "@/app/components/TitleButtons/TitleButtons";
 import { title } from "process";
 
 interface SecuritySectionProps {}
@@ -66,7 +66,6 @@ const SecuritySection: React.FC<SecuritySectionProps> = () => {
   });
 
   const slides = ~~((windowSize - 200) / 350);
-  console.log(slides);
 
   function incrementSlide() {
     swiperRef.current?.swiper.slideNext();

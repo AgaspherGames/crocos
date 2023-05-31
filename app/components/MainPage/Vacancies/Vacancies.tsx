@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Title from "../Title/Title";
+import Title from "../../Title/Title";
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TabContent from "./TabContent";
 import VacancyCard, { VacancyCardProps } from "./VacancyCard/VacancyCard";
-import FlatButton from "../FlatButton/FlatButton";
-import Tabs from "../Tabs/Tabs";
+import FlatButton from "@/app/components/FlatButton/FlatButton";
+import Tabs from "@/app/components/Tabs/Tabs";
 interface VacanciesProps {}
 
 interface ICards {

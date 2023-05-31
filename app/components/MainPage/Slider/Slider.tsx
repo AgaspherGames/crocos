@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import Button from "../Button/Button";
+import Button from "../../Button/Button";
 import Slide, { IPost } from "./Slides/Slide";
 import arrowIcon from "../../icons/arrow.svg";
 import Arrow from "./Arrow/Arrow";
 
 import { Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
-import SliderWrapper from "../SliderWrapper/SliderWrapper";
+import SliderWrapper from "../../SliderWrapper/SliderWrapper";
 
 interface SliderProps {}
 

@@ -1,40 +1,40 @@
 import GeoIcon from "@/app/icons/GeoIcon";
 import React, { useState } from "react";
-interface CitySelectProps {
-}
+import Select from "../../Select/Select";
+interface CitySelectProps {}
 
 interface ICity {
-  id: number;
-  name: string;
+  value: string;
+  text: string;
 }
 
-const CitySelect: React.FC<CitySelectProps> = ({  }) => {
+const CitySelect: React.FC<CitySelectProps> = ({}) => {
   const [citySelectOpened, setCitySelectOpened] = useState<boolean>(false);
 
   const [city, setCity] = useState<ICity>({
-    id: 1,
-    name: "Астана",
+    value: "1",
+    text: "Астана",
   });
   const [cities, setCities] = useState<ICity[]>([
     {
-      id: 1,
-      name: "Астана",
+      value: "1",
+      text: "Астана",
     },
     {
-      id: 2,
-      name: "Алматы",
+      value: "2",
+      text: "Алматы",
     },
     {
-      id: 3,
-      name: "Акмолинская область",
+      value: "3",
+      text: "Акмолинская область",
     },
     {
-      id: 4,
-      name: "Актюбинская область",
+      value: "4",
+      text: "Актюбинская область",
     },
     {
-      id: 5,
-      name: "Восточно-Казахстанская область",
+      value: "5",
+      text: "Восточно-Казахстанская область",
     },
   ]);
   return (
@@ -45,8 +45,8 @@ const CitySelect: React.FC<CitySelectProps> = ({  }) => {
       className="geo-label"
     >
       <GeoIcon height={30} width={20} className="light-blue" />
-      <p className="city">{city.name}</p>
-      <div
+      {/* <p className="city">{city.name}</p> */}
+      {/* <div
         onClick={(e) => e.stopPropagation()}
         className={`city-select ${citySelectOpened ? "open" : "close"}`}
       >
@@ -59,7 +59,8 @@ const CitySelect: React.FC<CitySelectProps> = ({  }) => {
             {el.name}
           </div>
         ))}
-      </div>
+      </div> */}
+      <Select options={cities} value={city} setValue={setCity} />
     </div>
   );
 };

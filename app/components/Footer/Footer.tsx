@@ -8,6 +8,7 @@ import GeoIcon from "@/app/icons/GeoIcon";
 import MapPinIcon from "@/app/icons/MapPinIcon";
 import EmailIcon from "@/app/icons/EmailIcon";
 import PhoneIcon from "@/app/icons/PhoneIcon";
+import { links } from "@/app/constants/links";
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
@@ -17,9 +18,15 @@ const Footer: React.FC<FooterProps> = () => {
         <div className="social-media">
           <LogoIcon />
           <div className="icons">
-            <WhatsappIcon />
-            <InstagramIcon />
-            <FacebookIcon />
+            <a href={links.whatsapp}>
+              <WhatsappIcon />
+            </a>
+            <a href={links.instagram}>
+              <InstagramIcon />
+            </a>
+            <a href={links.facebook}>
+              <FacebookIcon />
+            </a>
           </div>
         </div>
         <div className="footer-nav">
@@ -30,7 +37,7 @@ const Footer: React.FC<FooterProps> = () => {
           <a href="">Обучение</a>
           <a href="">Журнал</a>
         </div>
-          <Button>Заказать консультацию</Button>
+        <Button>Заказать консультацию</Button>
       </div>
       <div className="footer-bottom">
         <div className="contacts">
@@ -38,15 +45,15 @@ const Footer: React.FC<FooterProps> = () => {
           <p>По вопросам сотрудничества обращаться</p>
         </div>
         <div className="with-icon">
-          <PhoneIcon/>
+          <PhoneIcon />
           <p>7 777 656 43 32</p>
         </div>
         <div className="with-icon">
-          <EmailIcon/>
+          <EmailIcon />
           <p>kupiya@mail.kz</p>
         </div>
         <div className="with-icon">
-          <MapPinIcon/>
+          <MapPinIcon />
           <p>38-я ул. 40а, Нур-Султан 020000</p>
         </div>
       </div>

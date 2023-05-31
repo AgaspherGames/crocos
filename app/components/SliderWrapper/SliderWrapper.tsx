@@ -31,7 +31,6 @@ const SliderWrapper: React.FC<SliderWrapperProps> = ({
   progressBar,
   onlyMobileArrow=false,
 }) => {
-  console.log(progressBar);
 
   return (
     <div className="slider">

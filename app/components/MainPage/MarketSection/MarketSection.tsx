@@ -1,9 +1,9 @@
 import React from "react";
-import Title from "../Title/Title";
-import FlatButton from "../FlatButton/FlatButton";
+import Title from "../../Title/Title";
+import FlatButton from "../../FlatButton/FlatButton";
 import GeoIcon from "@/app/icons/GeoIcon";
 import MarketCard from "./MarketCard/MarketCard";
-import TitleButtons from "../TitleButtons/TitleButtons";
+import TitleButtons from "../../TitleButtons/TitleButtons";
 interface MarketSectionProps {}
 
 const MarketSection: React.FC<MarketSectionProps> = () => {

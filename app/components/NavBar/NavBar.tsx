@@ -5,10 +5,11 @@ import WhatsappIcon from "@/app/icons/WhatsappIcon";
 import InstagramIcon from "@/app/icons/InstagramIcon";
 import FacebookIcon from "@/app/icons/FacebookIcon";
 import CrossIcon from "@/app/icons/CrossIcon";
+import {links} from '@/app/constants/links'
 interface NavBarProps {}
 
 const NavBar: React.FC<NavBarProps> = () => {
-  const [isOpened, setIsOpened] = useState(true);
+  const [isOpened, setIsOpened] = useState(false);
   return (
     <div className="nav-bar">
       <div
@@ -26,9 +27,15 @@ const NavBar: React.FC<NavBarProps> = () => {
         <a href={"#"}>Тендеры</a>
         <a href={"#news"}>Отраслевой журнал</a>
         <div className="mb-only social-media">
-          <WhatsappIcon className="orange" />
-          <InstagramIcon className="orange" />
-          <FacebookIcon className="orange" />
+          <a href={links.whatsapp}>
+            <WhatsappIcon className="orange" />
+          </a>
+          <a href={links.instagram}>
+            <InstagramIcon className="orange" />
+          </a>
+          <a href={links.facebook}>
+            <FacebookIcon className="orange" />
+          </a>
         </div>
         <div
           onClick={() => {
