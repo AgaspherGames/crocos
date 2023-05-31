@@ -6,6 +6,7 @@ import InstagramIcon from "@/app/icons/InstagramIcon";
 import FacebookIcon from "@/app/icons/FacebookIcon";
 import CrossIcon from "@/app/icons/CrossIcon";
 import {links} from '@/app/constants/links'
+import BurgerMenuIcon from "@/app/icons/BurgerMenuIcon";
 interface NavBarProps {}
 
 const NavBar: React.FC<NavBarProps> = () => {
@@ -52,6 +53,7 @@ const NavBar: React.FC<NavBarProps> = () => {
         }}
         className="menu"
       >
+        <BurgerMenuIcon/>
         Меню
       </Button>
     </div>

@@ -30,6 +30,10 @@
   }
   .menu {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
   }
   @media only screen and (min-width: 1024px) {
     .links {
