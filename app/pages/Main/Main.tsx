@@ -10,13 +10,14 @@ import LearningSection from "@/app/components/MainPage/LearningSection/LearningS
 import IndustrySection from "@/app/components/MainPage/IndustrySection/IndustrySection";
 import Accordion from "@/app/components/Accordion/Accordion";
 import Footer from "@/app/components/Footer/Footer";
+import ConsultationButton from "@/app/components/ConsultationButton/ConsultationButton";
 interface MainProps {}
 
 
 const Main: React.FC<MainProps> = () => {
   return (
     <div>
-      <BackgroundLine/>
+      <ConsultationButton/>
       <Slider />
       <Services />
       <SecuritySection />

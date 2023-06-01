@@ -1,0 +1,13 @@
+.breadcrumbs {
+  display: flex;
+  gap: $default-gap;
+  a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #d5d5d5;
+  }
+  a.active{
+    color: #0E0F31;
+  }
+}

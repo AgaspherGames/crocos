@@ -2,6 +2,7 @@
   background-color: $dark-blue;
   margin: 20px calc(-1 * calc(2% + 40px)) 0;
   padding: 57px calc(2% + 40px) 83px;
+  position: relative;
 
   .footer-top {
     display: flex;

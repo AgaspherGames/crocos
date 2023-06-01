@@ -1,5 +1,16 @@
-.custom-select {
+@mixin select-color($color) {
+  &.outline {
+    border-color: $color;
+  }
+  .text {
+    color: $color;
+  }
+  path{
+    fill: $color;
+  }
+}
 
+.custom-select {
   position: relative;
 
   .custom-select-options {
@@ -16,7 +27,7 @@
     border-radius: $default-radius;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.267);
 
-    .active{
+    .active {
       color: $light-blue;
     }
 
@@ -25,10 +36,44 @@
       padding: 0;
     }
 
-    div{
+    div {
       cursor: pointer;
     }
-
   }
 
+  .text {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    p {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+  }
+
+  .arrow-icon {
+    transition: all 0.3s ease;
+  }
+
+  &.outline {
+    padding: 16px 21px;
+    border: 1px black solid;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    .text {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &[data-color="orange"] {
+    @include select-color($orange);
+  }
+  &[data-color="dark-blue"] {
+    @include select-color($dark-blue);
+  }
 }

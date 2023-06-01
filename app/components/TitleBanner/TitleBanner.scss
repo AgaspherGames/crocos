@@ -23,6 +23,8 @@
     transform: translateY(12px);
   }
 
+  
+
   h2 {
     margin: 0;
     font-weight: 700;
@@ -75,7 +77,11 @@
       background-size: 100% !important;
       background-position: center !important;
       mix-blend-mode: overlay;
+      
     }
+  }
+  .bg-image[data-type="full"] + .content{
+    transform: translateY(0);
   }
   &:hover{
     .bg-image {

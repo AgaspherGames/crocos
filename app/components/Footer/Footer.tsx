@@ -9,6 +9,7 @@ import MapPinIcon from "@/app/icons/MapPinIcon";
 import EmailIcon from "@/app/icons/EmailIcon";
 import PhoneIcon from "@/app/icons/PhoneIcon";
 import { links } from "@/app/constants/links";
+import BackgroundLine from "../BackgroundLine/BackgroundLine";
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
@@ -57,6 +58,7 @@ const Footer: React.FC<FooterProps> = () => {
           <p>38-я ул. 40а, Нур-Султан 020000</p>
         </div>
       </div>
+      {/* <BackgroundLine bottom /> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@
   z-index: -100;
   left: 0vw;
   right: 0;
-  width: 100vw;
+  // width: 100vw;
   top: 0;
   height: 150vh;
   background: transparent;
@@ -18,5 +18,13 @@
     background-color: white;
     box-shadow: 0 0 60px rgba($color: #000000, $alpha: 0.1);
     height: 100vh;
+  }
+
+  &.bottom {
+    top: -150vh;
+    .line{
+      top: unset;
+      bottom: -40vh;
+    }
   }
 }

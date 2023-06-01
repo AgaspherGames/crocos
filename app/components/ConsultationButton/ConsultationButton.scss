@@ -1,0 +1,40 @@
+.consultation-button {
+  overflow: visible;
+  padding: 30px;
+  width: fit-content;
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  z-index: 1000;
+  gap: 8px;
+  
+  .btn {
+    @extend %flex-center;
+    flex-direction: column;
+    background: radial-gradient(
+        70.26% 224.84% at 27.18% 37%,
+        #00a2e4 23.34%,
+        #2000e4 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    box-shadow: 0px 8px 30px rgba(0, 163, 255, 0.38);
+    border-radius: 4000px;
+    padding: 24px;
+    width: min-content;
+    aspect-ratio: 1;
+  }
+  // height: 112px;
+
+  p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}

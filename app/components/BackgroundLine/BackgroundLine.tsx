@@ -1,8 +1,12 @@
 import React from 'react';
-interface BackgroundLineProps {}
+interface BackgroundLineProps {
+  bottom?: boolean
+}
 
-const BackgroundLine: React.FC<BackgroundLineProps> = () => {
-  return ( <div className='background-line'>
+const BackgroundLine: React.FC<BackgroundLineProps> = ({
+  bottom= false
+}) => {
+  return ( <div className={`background-line ${bottom ? 'bottom' :''}`}>
     <div className="line"></div>
         
   </div> );
