@@ -17,6 +17,7 @@ interface MainProps {}
 const Main: React.FC<MainProps> = () => {
   return (
     <div>
+      <BackgroundLine/>
       <ConsultationButton/>
       <Slider />
       <Services />

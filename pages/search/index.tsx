@@ -19,8 +19,8 @@ export default function Home() {
       <div>
         <Header/>
         <NavBar/>
-        <Main/>  
-        {/* <Search/> */}
+        {/* <Main/> */}  
+        <Search/>
       </div>
     </>
   )

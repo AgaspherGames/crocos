@@ -45,4 +45,13 @@
     border-radius: 8px;
   }
 
+  .results{
+    display: flex;
+    flex-direction: column;
+    gap: $default-gap;
+  }
+
+  .tab-titles{
+    flex-direction: column;
+  }
 }
