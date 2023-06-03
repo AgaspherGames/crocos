@@ -1,14 +1,21 @@
 $light-green: #00e49f;
 $light-blue: #00a2e4;
 $orange: #c96332;
-$dark-blue: #0E0F31;
-$yellow: #FFA825;
+$dark-blue: #0e0f31;
+$yellow: #ffa825;
 
 $default-gap: 30px;
 $default-radius: 20px;
 
-%flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%inset-0 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
 }

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 interface MarketCardProps {
   imgUrl: string;
@@ -13,9 +14,17 @@ const background = `
   ),
   `;
 
-const MarketCard: React.FC<MarketCardProps> = ({ double = false, imgUrl, text }) => {
+const MarketCard: React.FC<MarketCardProps> = ({
+  double = false,
+  imgUrl,
+  text,
+}) => {
   return (
-    <div style={{background: `${background} url(${imgUrl})`}} className={`card ${double ? "double" : ""}`}>
+    <div
+      // style={{ background: `${background} url(${imgUrl})` }}
+      className={`card ${double ? "double" : ""}`}
+    >
+      <Image src={imgUrl} width={1000} height={500} alt={text} />
       <p>{text}</p>
     </div>
   );

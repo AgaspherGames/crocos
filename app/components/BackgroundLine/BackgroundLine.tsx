@@ -12,4 +12,4 @@ const BackgroundLine: React.FC<BackgroundLineProps> = ({
   </div> );
 }
 
-export default BackgroundLine;
+export default BackgroundLine; 

@@ -1,0 +1,39 @@
+.modal {
+  font-family: "__euclideFlex_910ac1", "__euclideFlex_Fallback_910ac1";
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  @extend %flex-center;
+  background: transparent;
+  pointer-events: none;
+
+  &.open {
+    background: #0000004f;
+    display: flex !important;
+    pointer-events: auto;
+    & .content {
+      opacity: 1;
+    }
+  }
+
+  & .content {
+    position: relative;
+    width: clamp(350px, 80%, 700px);
+    padding: 40px;
+
+    background: #fff;
+    border-radius: $default-radius;
+    opacity: 0;
+  }
+
+  & .modal-cross{
+    cursor: pointer;
+    position: absolute;
+    top: 49px;
+    right: 40px;
+  }
+}

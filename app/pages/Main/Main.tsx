@@ -31,6 +31,7 @@ const Main: React.FC<MainProps> = () => {
       <IndustrySection/>
       <Accordion/>
       <Footer/>
+
     </div>
   );
 };
