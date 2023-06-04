@@ -18,13 +18,16 @@ import FacebookIcon from "@/app/icons/FacebookIcon";
 import UserIcon from "@/app/icons/UserIcon";
 import { links } from "@/app/constants/links";
 import SelectLang from "../SelectLang/SelectLang";
+import Link from "next/link";
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   return (
     <div className="header">
       <div>
-        <Logo />
+        <Link href={"/"}>
+          <Logo />
+        </Link>
       </div>
       <div className="info">
         <div className="social-media">
@@ -38,9 +41,9 @@ const Header: React.FC<HeaderProps> = () => {
             <FacebookIcon className="orange" />
           </a>
         </div>
-        <CitySelect />
+        {/* <CitySelect /> */}
         <div className="flex buttons">
-          <SelectLang/>
+          <SelectLang />
           <UserIcon width={25} height={25} className="icon" />
           <Button className="account">Личный кабинет</Button>
         </div>

@@ -30,3 +30,22 @@ export interface ICompany {
     description: string;
   }[];
 }
+
+export interface IFilter {
+  id: number;
+  title: string;
+  handbook_security_service_types: {
+    id: number;
+    title: string;
+    hint: string;
+  }[];
+}
+
+export interface ICity{
+  handbook_regions: {
+    id: number;
+    title: string
+  }[]
+  id: number
+  title: string
+}

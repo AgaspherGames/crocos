@@ -17,6 +17,7 @@
 html {
   background-color: #f5f5f5;
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 100vw;
 }
 
@@ -30,6 +31,11 @@ body {
   scroll-behavior: smooth;
 }
 
+body{
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+}
 main {
   width: 96%;
   margin: auto;
@@ -128,9 +134,9 @@ button {
   }
 }
 
-.dashed{
+.dashed {
   margin-top: 20px;
   margin: 20px 0;
-  border: 1px #d4d4d4 dashed ;
+  border: 1px #d4d4d4 dashed;
   width: 100%;
 }

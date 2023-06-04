@@ -6,7 +6,6 @@ interface ConsultationButtonProps {}
 
 const ConsultationButton: React.FC<ConsultationButtonProps> = () => {
   const [modalOpened, setModalOpened] = React.useState(false);
-  console.log(modalOpened);
   
   return (
     <div className="consultation-button">

@@ -23,33 +23,15 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
     arr.length > 5 && arr.splice(5, 0, ") ");
     arr.length > 9 && arr.splice(9, 0, " ");
     arr.length > 12 && arr.splice(12, 0, " ");
-
-    // arr[14] ||= "_";
-    // arr[13] ||= "_";
-    // arr[12] ||= " ";
-    // arr[11] ||= "_";
-    // arr[10] ||= "_";
-    // arr[9] ||= " ";
-    // arr[8] ||= "_";
-    // arr[7] ||= "_";
-    // arr[6] ||= "_";
-    // arr[5] ||= ")";
-    // arr[4] ||= "_";
-    // arr[3] ||= "_";
-    // arr[2] ||= "_";
-    // arr[1] ||= "(";
     new_value = maxLength(arr.join(""), 18);
     setPhone(new_value);
-    // if (phoneInput?.current != null) {
-    //   const input = phoneInput.current;
-    //   input!.selectionStart = 1;
-    //   input!.selectionEnd = 2;
-    // }
   }
 
   function maxLength(string: string, len: number) {
     return string.slice(0, len);
   }
+
+
 
   return (
     <Modal opened={opened} setOpened={setOpened}>

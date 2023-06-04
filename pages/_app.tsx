@@ -35,7 +35,6 @@ const euclideFlex = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log(euclideFlex.style);
   
   return <main className={euclideFlex.className}>
     <Component {...pageProps} />

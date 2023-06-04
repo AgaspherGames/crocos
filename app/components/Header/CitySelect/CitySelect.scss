@@ -1,0 +1,48 @@
+.city-select {
+}
+
+.city-select-modal {
+  & .city-select-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: $default-gap;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  & .tab-titles {
+    height: 30vh;
+    flex-direction: column;
+    overflow-y: scroll;
+    @media screen and (min-width: 1024px) {
+      width: 45%;
+      height: 40vh;
+      overflow-y: scroll;
+    }
+  }
+
+  & .city-list {
+    margin-top: 0;
+    height: 20vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @media screen and (min-width: 1024px) {
+      height: 40vh;
+      overflow-y: scroll;
+    }
+  }
+
+  & .tab-panels{
+    @media screen and (min-width: 1024px) {
+      width: 45%;
+      margin-top: -42px;
+    }
+  }
+
+  & .modal-title {
+    margin-bottom: 12px;
+  }
+}
