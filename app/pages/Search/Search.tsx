@@ -131,7 +131,7 @@ const Search: React.FC<SearchProps> = () => {
               )}
 
               {filter.handbook_security_service_types.map((el) => (
-                <>
+                <React.Fragment key={el.id}>
                   <input
                     onChange={() => {
                       onChange(el.id);
@@ -142,7 +142,7 @@ const Search: React.FC<SearchProps> = () => {
                   <label htmlFor="">{el.title}</label>
                   <br />
                   <br />
-                </>
+                </React.Fragment>
               ))}
             </div>
           ),
