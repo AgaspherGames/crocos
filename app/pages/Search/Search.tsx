@@ -116,7 +116,7 @@ const Search: React.FC<SearchProps> = () => {
             <div>
               <h4>Сфера деятельности</h4>
               {filter.handbook_security_service_types.length > 1 && (
-                <>
+                <div>
                   <input
                     checked={isAllChecked(ids)}
                     onChange={() => {
@@ -127,11 +127,11 @@ const Search: React.FC<SearchProps> = () => {
                   <label htmlFor="">Все</label>
                   <br />
                   <br />
-                </>
+                </div>
               )}
 
               {filter.handbook_security_service_types.map((el) => (
-                <React.Fragment key={el.id}>
+                <div className="filter-item" key={el.id}>
                   <input
                     onChange={() => {
                       onChange(el.id);
@@ -142,7 +142,7 @@ const Search: React.FC<SearchProps> = () => {
                   <label htmlFor="">{el.title}</label>
                   <br />
                   <br />
-                </React.Fragment>
+                </div>
               ))}
             </div>
           ),

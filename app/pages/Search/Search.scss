@@ -1,11 +1,13 @@
 .search {
-  
   .search-line {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+
     gap: 28px;
     margin-top: 40px;
     margin-bottom: 34px;
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 4fr;
+    }
   }
 
   .search-input {
@@ -29,33 +31,44 @@
     }
   }
 
-  .results-section{
+  .results-section {
     display: grid;
-    grid-template-columns: 1fr 4fr;
     gap: 28px;
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 4fr;
+    }
   }
 
-  .sorts{
+  .sorts {
     display: flex;
     gap: 35px;
   }
 
-  .filters{
-    position: sticky;
+  .filters {
+    max-width: calc( 100vw - 4vw );
+    box-sizing: border-box;
     top: 30px;
     padding: 40px 55px 45px;
     background: white;
     border-radius: 8px;
     height: fit-content;
+    @media screen and (min-width: 1024px) {
+      position: sticky;
+    }
   }
 
-  .results{
+  .filter-item{
+    
+    box-sizing: border-box;
+  }
+
+  .results {
     display: flex;
     flex-direction: column;
     gap: $default-gap;
   }
 
-  .tab-titles{
+  .tab-titles {
     flex-direction: column;
   }
 }
