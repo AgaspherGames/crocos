@@ -1,14 +1,24 @@
 import axios from "axios";
 import { headers } from "next/dist/client/components/headers";
-import { ICity } from "../types/interfaces";
+import { ICity, ICityItem } from "../types/interfaces";
 
 axios.defaults.baseURL = "https://api.kupiya.kz/api/v1";
 
 class Api {
-  async fetchCompanies(ids?: number[]) {
-    const queryParams = ids
+  async fetchCompanies(service_ids?: number[], city?: ICityItem, search?: string) {
+    let queryParams = service_ids
       ?.map((id) => `handbook_security_service_type_ids[]=${id}`)
       .join("&");
+      if (city){
+        city?.type=='city'
+        ?
+        queryParams+= '&handbook_city_id='+city.id
+        :
+        queryParams+= '&handbook_region_id='+city.id
+      }
+      if (search){
+        queryParams+= '&search='+search
+      }
     const response = await axios.get("/security-services?" + queryParams, {
       params: {
         per_page: 15,

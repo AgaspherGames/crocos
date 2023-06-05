@@ -1,4 +1,19 @@
 .city-select {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  padding: 18px 24px;
+
+  &.outline{
+    border: 1px $orange solid;
+    border-radius: 1000px;
+  }
+
+  &.orange{
+    color: $orange;
+    border-color: $orange;
+  }
 }
 
 .city-select-modal {
@@ -44,5 +59,13 @@
 
   & .modal-title {
     margin-bottom: 12px;
+  }
+
+  & .region-item{
+    cursor: pointer;
+
+    &.active{
+      color: $light-blue;
+    }
   }
 }

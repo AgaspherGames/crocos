@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  & .pagination-item {
+    width: 34px;
+    height: 32px;
+    @extend %flex-center;
+
+    background: hsl(0, 0%, 99%);
+    color: hsl(0, 0%, 60%);
+    padding: 4px;
+    border-radius: 8px;
+    text-align: center;
+
+    cursor: pointer;
+
+    &.active {
+      background: $light-blue;
+      color: white;
+    }
+  }
+}

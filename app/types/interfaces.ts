@@ -41,11 +41,21 @@ export interface IFilter {
   }[];
 }
 
-export interface ICity{
-  handbook_regions: {
-    id: number;
-    title: string
-  }[]
-  id: number
-  title: string
+export interface IRegion {
+  id: number;
+  title: string;
+}
+export interface ICity {
+  handbook_regions: IRegion[];
+  id: number;
+  title: string;
+}
+export interface ICityItem extends IRegion {
+  type: "city" | "region";
+}
+
+export interface ILink {
+  url: string|null;
+  label: string;
+  active: boolean;
 }

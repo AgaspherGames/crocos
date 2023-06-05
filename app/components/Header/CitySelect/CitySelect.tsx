@@ -3,22 +3,15 @@ import React, { useState } from "react";
 import Select from "../../Select/Select";
 import Modal from "../../Modal/Modal";
 import Tabs from "../../Tabs/Tabs";
-import { ICity } from "@/app/types/interfaces";
+import { ICity, ICityItem } from "@/app/types/interfaces";
 interface CitySelectProps {
   cities: ICity[];
+  city: ICityItem;
+  setCity: React.Dispatch<React.SetStateAction<ICityItem>>;
 }
 
-const CitySelect: React.FC<CitySelectProps> = ({ cities }) => {
+const CitySelect: React.FC<CitySelectProps> = ({ cities, city, setCity }) => {
   const [citySelectOpened, setCitySelectOpened] = useState<boolean>(false);
-
-  const [city, setCity] = useState<{
-    id: number;
-    title: string;
-  }>({
-    id: 167,
-    title: "Астана",
-  });
-  console.log(cities);
   // const [cities, setCities] = useState<ICity[]>([
   //   {
   //     value: "1",
@@ -44,12 +37,13 @@ const CitySelect: React.FC<CitySelectProps> = ({ cities }) => {
   return (
     <div
       onClick={() => {
-        setCitySelectOpened((prev) => !prev);
+        
+        setCitySelectOpened(true);
       }}
-      className="geo-label city-select"
+      className="geo-label city-select outline orange"
     >
-      <GeoIcon height={30} width={20} className="light-blue" />
-      <p className="city">{city.title}</p>
+      <GeoIcon height={30} width={20} className="orange" />
+      <p className="city">{city.title || "Выберите район"}</p>
 
       {/* <Select options={cities} value={city} setValue={setCity} /> */}
       <Modal opened={citySelectOpened} setOpened={setCitySelectOpened}>
@@ -59,17 +53,30 @@ const CitySelect: React.FC<CitySelectProps> = ({ cities }) => {
           {cities.length && (
             <Tabs
               className="city-select-tabs"
-              tabs={cities?.map((city) => ({
-                name: city.title,
+              tabs={cities?.map((city_el) => ({
+                name: city_el.title,
                 tab: (
-                  <div>
+                  <div key={city_el.id}>
                     <p className="modal-title">Выберите город</p>
                     <div className="city-list">
-                      {city.handbook_regions.map((el) => (
+                      {city_el.handbook_regions.length > 1 && (
                         <div
                           onClick={() => {
-                            setCity(el);
+                            setCity({...city_el, type: "city"});
                           }}
+                          className={`region-item ${city_el.id==city.id&&city.type=='city' ? "active" :''}`}
+                        >
+                          Все районы
+                        </div>
+                      )}
+                      {city_el.handbook_regions.map((el) => (
+                        <div
+                        key={el.id}
+                          onClick={() => {
+                            
+                            setCity({...el, type:'region'});
+                          }}
+                          className={`region-item ${el.id==city.id&&city.type=='region' ? "active" :''}`}
                         >
                           {el.title}
                         </div>

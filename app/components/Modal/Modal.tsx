@@ -18,7 +18,8 @@ const Modal: React.FC<ModalProps> = ({ children, opened, setOpened }) => {
   if (!(mounted && ref.current)) return <div></div>;
   return createPortal(
     <div
-      onClick={() => {
+      onClick={(e) => {
+        e.stopPropagation()
         setOpened(false);
       }}
       className={`modal ${opened ? "open" : ""}`}
