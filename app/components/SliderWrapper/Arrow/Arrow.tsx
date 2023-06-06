@@ -1,5 +1,5 @@
 import React from 'react';
-interface ArrowProps extends React.HTMLAttributes<IMGOr> {
+interface ArrowProps extends React.HTMLAttributes<HTMLOrSVGElement> {
     color: string,
     rotate?: number
 }
