@@ -11,6 +11,9 @@ const Pagination: React.FC<PaginationProps> = ({
   pagesCount,
   setPage,
 }) => {
+  if (pagesCount<2){
+    return <div></div>
+  }
   const pages = (function name() {
     if (pagesCount < 5) {
       return Array(pagesCount)

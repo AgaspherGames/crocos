@@ -31,7 +31,7 @@ body {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   height: 100vh;
   overflow-y: scroll;
   position: relative;
@@ -125,13 +125,13 @@ button {
   color: $dark-blue;
   display: flex;
   gap: $default-gap;
-  .reviews-count {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+}
+.reviews-count {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 
-    color: #d5d5d5;
-  }
+  color: #d5d5d5;
 }
 
 .dashed {

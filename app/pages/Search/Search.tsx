@@ -9,7 +9,7 @@ import Select from "@/app/components/Select/Select";
 import Tabs from "@/app/components/Tabs/Tabs";
 import TitleBanner from "@/app/components/TitleBanner/TitleBanner";
 import useDebounce from "@/app/hooks/hooks";
-import { useCities, useCompanies, useFilters } from "@/app/hooks/useHandbooks";
+import { useCities, useCompanies, useFilters } from "@/app/hooks/handbookHooks";
 import GeoIcon from "@/app/icons/GeoIcon";
 import LoupeIcon from "@/app/icons/LoupeIcon";
 import { ICity, ICityItem, ICompany, IFilter } from "@/app/types/interfaces";
@@ -73,13 +73,13 @@ const Search: React.FC<SearchProps> = () => {
   const [filterTabs, setFilterTabs] = useState<any>([]);
 
   const [page, setPage] = useState<number>(1);
-  const { companies, pageCount } = useCompanies(
+  const { companies, pagesCount } = useCompanies(
     page,
     activeFilters,
     city,
     debouncedSearch
   );
-  console.log(pageCount);
+  console.log(pagesCount);
 
   function addFilter(id: number) {
     setActiveFilters((prev) => [...prev, id]);
@@ -197,7 +197,7 @@ const Search: React.FC<SearchProps> = () => {
             {companies.map((company) => (
               <ResultItem key={company.id} company={company} />
             ))}
-            <Pagination page={page} pagesCount={pageCount} setPage={setPage} />
+            <Pagination page={page} pagesCount={pagesCount} setPage={setPage} />
           </div>
         </div>
       </div>

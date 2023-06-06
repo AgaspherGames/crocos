@@ -1,0 +1,127 @@
+.company-page {
+  & .company-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 62px 90px;
+    background: #ffffff;
+    box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.02);
+    border-radius: $default-radius;
+
+    & .info-top {
+      display: flex;
+      gap: 40px;
+    }
+
+    & .address {
+      color: $orange;
+
+      & a {
+        margin-left: 32px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 15px;
+
+        color: $light-blue;
+        border-bottom: $light-blue 1px dashed;
+      }
+    }
+
+    & .company-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    & .company-title {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 51px;
+
+      color: #0e0f31;
+    }
+
+    & .info-bottom {
+      display: flex;
+      gap: 20px;
+    }
+
+    & .buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
+      gap: 10px;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+      }
+
+      & .white-icon {
+        path {
+          stroke: white;
+        }
+      }
+    }
+  }
+
+  & .company-accordion {
+    margin-top: 40px;
+    padding: 52px 50px;
+    background: #ffffff;
+    box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.02);
+    border-radius: $default-radius;
+
+    & .text {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        transition: all 0.3s ease;
+        position: absolute;
+        content: "";
+        background: linear-gradient(to top, white, rgba(255, 255, 255, 0));
+        opacity: 0;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50%;
+        z-index: 2;
+      }
+    }
+
+    &[data-open="true"] {
+      & .text {
+        max-height: 1000px;
+      }
+    }
+    &[data-open="false"] {
+      & .text {
+        max-height: 100px;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    & .more-less{
+      display: flex; 
+      align-items: center;
+      color: $light-blue;
+      gap: 12px;
+    }
+
+    & .arrow-icon {
+      transition: all 0.3s ease;
+    }
+  }
+}

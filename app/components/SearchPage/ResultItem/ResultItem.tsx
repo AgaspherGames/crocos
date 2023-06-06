@@ -7,6 +7,7 @@ import StarIcon from "@/app/icons/StarIcon";
 import FlatButton from "../../FlatButton/FlatButton";
 import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
 import { ICompany } from "@/app/types/interfaces";
+import Stars from "../../Stars/Stars";
 interface ResultItemProps {
   company: ICompany;
 }
@@ -35,23 +36,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ company }) => {
             <div className="price-text">
               <div className="security-bold">
                 {company.title}
-                <div className="stars">
-                  <StarIcon
-                    className={`${company.rating >= 1 ? "gold" : ""}`}
-                  />
-                  <StarIcon
-                    className={`${company.rating >= 2 ? "gold" : ""}`}
-                  />
-                  <StarIcon
-                    className={`${company.rating >= 3 ? "gold" : ""}`}
-                  />
-                  <StarIcon
-                    className={`${company.rating >= 4 ? "gold" : ""}`}
-                  />
-                  <StarIcon
-                    className={`${company.rating >= 5 ? "gold" : ""}`}
-                  />
-                </div>
+                <Stars stars={company.rating} />
                 <p className="reviews-count">
                   {company.reviews.length} отзывов
                 </p>
