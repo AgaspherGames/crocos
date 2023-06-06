@@ -3,11 +3,6 @@ import React, { useState } from "react";
 import Logo from "./Logo/Logo";
 import Icon from "@/app/icons/Icon";
 
-import whatsappIcon from "../../icons/whatsapp-orange.png";
-import facebookIcon from "../../icons/facebook-orange.png";
-import instagramIcon from "../../icons/instagram-orange.png";
-import geoIcon from "../../icons/geo.svg";
-import userIcon from "../../icons/user.svg";
 import Button from "../Button/Button";
 import Select from "../Select/Select";
 import GeoIcon from "@/app/icons/GeoIcon";

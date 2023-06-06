@@ -1,7 +1,8 @@
 import React from "react";
-interface ArrowCircleIconProps extends React.HTMLAttributes<HTMLOrSVGElement> {}
+interface ArrowCircleIconProps extends React.HTMLAttributes<HTMLOrSVGElement> {
+}
 
-const ArrowCircleIcon: React.FC<ArrowCircleIconProps> = ({ ...props }) => {
+const ArrowCircleIcon: React.FC<ArrowCircleIconProps> = ({...props }) => {
   return (
     <svg
       width="20"

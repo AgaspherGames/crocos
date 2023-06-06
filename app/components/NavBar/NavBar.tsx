@@ -20,7 +20,7 @@ const NavBar: React.FC<NavBarProps> = () => {
         className={`links ${isOpened ? "opened" : ""}`}
       >
         <Button className="mb-only">Личный кабинет</Button>
-        <Link href="search">Охранные услуги</Link>
+        <Link href="/search">Охранные услуги</Link>
         <a href={"#learning"}>Обучение</a>
         <a href={"#vacansies"}>Вакансии</a>
         <a href={"#market"}>Маркет</a>

@@ -1,6 +1,5 @@
 import Title from "@/app/components/Title/Title";
 import React, { useEffect, useRef, useState } from "react";
-import geoIcon from "@/app/icons/geo.svg";
 import Image from "next/image";
 import FlatButton from "@/app/components/FlatButton/FlatButton";
 import SecurityCard, { SecurityCardProps } from "./SecurityCard/SecurityCard";

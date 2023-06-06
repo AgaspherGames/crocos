@@ -5,7 +5,7 @@ interface TopBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const TopBadge: React.FC<TopBadgeProps> = ({ type, className, ...props }) => {
-  return <div className={type + " badge " + className} {...props} />;
+  return <div className={type + " badge " + className??''} {...props} />;
 };
 
 export default TopBadge;

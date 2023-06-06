@@ -1,3 +1,10 @@
+%shadow-card {
+  background-color: #ffffff;
+  box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.02);
+  border-radius: $default-radius;
+  box-sizing: border-box;
+}
+
 .company-page {
   & .company-card {
     display: flex;
@@ -113,8 +120,9 @@
       }
     }
 
-    & .more-less{
-      display: flex; 
+    & .more-less {
+      cursor: pointer;
+      display: flex;
       align-items: center;
       color: $light-blue;
       gap: 12px;
@@ -122,6 +130,39 @@
 
     & .arrow-icon {
       transition: all 0.3s ease;
+    }
+  }
+
+  & .services-tabs {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: $default-gap;
+
+    & .tab-titles {
+      @extend %shadow-card;
+      padding: 25px;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    & .tab-name-wrap {
+      display: flex;
+      gap: 12px;
+      & svg {
+        min-width: 20px;
+      }
+    }
+
+    & .tab-panels {
+      margin-top: 0;
+      padding: 50px 60px;
+      @extend %shadow-card;
+      height: 100%;
+    }
+
+    & hr {
+      border: 1px solid #f4f4f7;
+      margin: 30px -60px;
     }
   }
 }

@@ -5,19 +5,91 @@ import FlatButton from "@/app/components/FlatButton/FlatButton";
 import Rating from "@/app/components/Rating/Rating";
 import Arrow from "@/app/components/SliderWrapper/Arrow/Arrow";
 import Stars from "@/app/components/Stars/Stars";
+import Tabs from "@/app/components/Tabs/Tabs";
+import Title from "@/app/components/Title/Title";
 import TitleBanner from "@/app/components/TitleBanner/TitleBanner";
 import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
 import ArrowIcon from "@/app/icons/ArrowIcon";
+import BagHappyIcon from "@/app/icons/BagHappyIcon";
 import DownloadIcon from "@/app/icons/DownloadIcon";
 import GeoIcon from "@/app/icons/GeoIcon";
 import StarIcon from "@/app/icons/StarIcon";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import CompanyService from "./CompanyService/CompanyService";
+import SliderWrapper from "@/app/components/SliderWrapper/SliderWrapper";
+import VacancyCard, {
+  VacancyCardProps,
+} from "@/app/components/MainPage/Vacancies/VacancyCard/VacancyCard";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 interface CompanyPageProps {}
 
 const CompanyPage: React.FC<CompanyPageProps> = () => {
   const [accordionOpened, setAccordionOpened] = useState(false);
+
+  const [vacancies, setVacancies] = useState<VacancyCardProps[]>([
+    {
+      badgeText: "Ищу работу",
+      city: "Астана",
+      experience: "1-3 года",
+      salary: "от 100 000 до 200 000 KZT",
+      text: "Охранник на объект различных категорий",
+    },
+    {
+      badgeText: "Ищу работу",
+      city: "Астана",
+      experience: "1-3 года",
+      salary: "з/п не указана",
+      text: "Охранник на объект различных категорий",
+    },
+    {
+      badgeText: "Ищу работу",
+      city: "Астана",
+      experience: "1-3 года",
+      salary: "от 100 000 до 200 000 KZT",
+      text: "Охранник на объект различных категорий",
+    },
+    {
+      badgeText: "Ищу работу",
+      city: "Астана",
+      experience: "1-3 года",
+      salary: "от 100 000 до 200 000 KZT",
+      text: "Охранник на объект различных категорий",
+    },
+    {
+      badgeText: "Ищу работу",
+      city: "Астана",
+      experience: "1-3 года",
+      salary: "з/п не указана",
+      text: "Охранник на объект различных категорий",
+    },
+    // {
+    //   badgeText: "Ищу работу",
+    //   city: "Астана",
+    //   experience: "1-3 года",
+    //   salary: "от 100 000 до 200 000 KZT",
+    //   text: "Охранник на объект различных категорий",
+    // },
+  ]);
+
+  const [windowSize, setWindowSize] = useState(0);
+
+  const swiperRef = useRef<SwiperRef>(null);
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  });
+
+  const slides = ~~((windowSize - 200) / 350);
+
+  function incrementSlide() {
+    swiperRef.current?.swiper.slideNext();
+  }
+  function decrementSlide() {
+    swiperRef.current?.swiper.slidePrev();
+  }
+
   return (
     <div className="company-page">
       <BackgroundLine />
@@ -105,6 +177,73 @@ const CompanyPage: React.FC<CompanyPageProps> = () => {
           />
         </div>
       </div>
+
+      <Title text="Наши услуги" />
+      <Tabs
+        className="services-tabs"
+        tabs={[
+          {
+            name: (
+              <div className="tab-name-wrap">
+                {" "}
+                <BagHappyIcon /> Пультовая охрана
+              </div>
+            ),
+            tab: (
+              <div>
+                <CompanyService />
+                <hr />
+                <CompanyService />
+              </div>
+            ),
+          },
+          {
+            name: (
+              <div className="tab-name-wrap">
+                {" "}
+                <BagHappyIcon /> Физическая охрана
+              </div>
+            ),
+            tab: <div>Физическая охрана</div>,
+          },
+          {
+            name: (
+              <div className="tab-name-wrap">
+                {" "}
+                <BagHappyIcon /> Консультирование в области охраны
+              </div>
+            ),
+            tab: <div>Консультирование в области охраны</div>,
+          },
+        ]}
+      />
+      {vacancies.length > slides ? (
+        <SliderWrapper
+          decrement={decrementSlide}
+          increment={incrementSlide}
+          swiperRef={swiperRef}
+        >
+          <Swiper
+            loop
+            ref={swiperRef}
+            spaceBetween={30}
+            slidesPerView={Math.min(slides || 1, vacancies.length)}
+            className="swiper"
+          >
+            {vacancies.map((el, ind) => (
+              <SwiperSlide key={ind}>
+                <VacancyCard {...el} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </SliderWrapper>
+      ) : (
+        <div className="flex">
+          {vacancies.map((el, ind) => (
+            <VacancyCard key={ind} {...el} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -6,7 +6,7 @@ interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 interface ITab {
-  name: string;
+  name: string | React.ReactNode;
   tab: React.ReactNode;
   className?: string;
 }
@@ -14,7 +14,7 @@ interface ITab {
 const Tabs: React.FC<TabsProps> = ({ tabs, className, middle }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
   return (
-    <div className={`tabs ${className}`}>
+    <div className={`tabs ${className??''}`}>
       <div className="tab-titles">
         {tabs.map((tab, ind) => (
           <div

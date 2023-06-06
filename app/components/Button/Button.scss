@@ -9,4 +9,13 @@
   border-radius: 8px;
   color: white;
   font-size: 1rem;
+
+  &.with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    path {
+      stroke: white;
+    }
+  }
 }

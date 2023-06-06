@@ -8,7 +8,6 @@ import React, {
 } from "react";
 import Button from "../Button/Button";
 // import Slide, { IPost } from "./Slides/Slide";
-import arrowIcon from "../../icons/arrow.svg";
 import Arrow from "./Arrow/Arrow";
 
 import { Pagination, Navigation } from "swiper";

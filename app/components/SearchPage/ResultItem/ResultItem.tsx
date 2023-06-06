@@ -8,6 +8,7 @@ import FlatButton from "../../FlatButton/FlatButton";
 import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
 import { ICompany } from "@/app/types/interfaces";
 import Stars from "../../Stars/Stars";
+import Link from "next/link";
 interface ResultItemProps {
   company: ICompany;
 }
@@ -57,9 +58,11 @@ const ResultItem: React.FC<ResultItemProps> = ({ company }) => {
             <p className="bold">Абонентская плата от</p>
             <p className="cost-value">По договоренности</p>
           </div>
-          <FlatButton outline>
-            Контакты <ArrowCircleIcon />{" "}
-          </FlatButton>
+          <Link href={'/company/1'} >
+            <FlatButton outline>
+              Контакты <ArrowCircleIcon />{" "}
+            </FlatButton>
+          </Link>
         </div>
       </div>
     </div>

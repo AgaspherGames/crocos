@@ -3,7 +3,6 @@ import Button from "@/app/components/Button/Button";
 import TopBadge from "@/app/components/Badges/TopBadge";
 import Image from "next/image";
 import FlatButton from "@/app/components/FlatButton/FlatButton";
-import SendIcon from '@/app/icons/send.svg' 
 import Rating from "@/app/components/Rating/Rating";
 
 export interface SecurityCardProps {
@@ -44,7 +43,7 @@ const SecurityCard: React.FC<SecurityCardProps> = ({badge,rating,price,text}) =>
       <hr />
       <div className="card-bottom">
         <Button>Посмотреть улсуги</Button>
-        <FlatButton color="orange" >Онлайн заявка <Image  alt="send icon" src={SendIcon} width={20} height={20} /> </FlatButton>
+        <FlatButton color="orange" >Онлайн заявка <Image  alt="send icon" src={'/icons/send.svg'} width={20} height={20} /> </FlatButton>
       </div>
     </div>
   );
