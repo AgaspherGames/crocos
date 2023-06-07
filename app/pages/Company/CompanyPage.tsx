@@ -23,6 +23,7 @@ import VacancyCard, {
   VacancyCardProps,
 } from "@/app/components/MainPage/Vacancies/VacancyCard/VacancyCard";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import LikeIcon from "@/app/icons/LikeIcon";
 interface CompanyPageProps {}
 
 const CompanyPage: React.FC<CompanyPageProps> = () => {
@@ -81,7 +82,7 @@ const CompanyPage: React.FC<CompanyPageProps> = () => {
     setWindowSize(window.innerWidth);
   });
 
-  const slides = ~~((windowSize - 200) / 350);
+  const slides = ~~((windowSize - 200) / 460);
 
   function incrementSlide() {
     swiperRef.current?.swiper.slideNext();
@@ -89,6 +90,42 @@ const CompanyPage: React.FC<CompanyPageProps> = () => {
   function decrementSlide() {
     swiperRef.current?.swiper.slidePrev();
   }
+
+  let description = `
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos
+          excepturi quae ab sequi voluptatem, ea expedita eos nemo totam
+          blanditiis tenetur consequatur nesciunt tempore dignissimos debitis
+          sit laborum non deleniti soluta vitae veritatis dicta cupiditate?
+          Perferendis id ratione doloremque perspiciatis blanditiis odio fugit
+          tenetur libero minima, rem nemo natus deserunt dignissimos eveniet
+          dicta! Facere molestias sunt alias corporis, repellendus eaque maxime
+          provident? Quas itaque enim numquam neque quasi illum, explicabo
+          veniam, molestiae laborum dignissimos iure alias consequuntur
+          voluptate atque amet esse nam. Tempore accusamus laudantium, nam animi
+          a similique quis officia sapiente accusantium eaque, quasi distinctio
+          ullam doloribus dicta! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Beatae quos excepturi quae ab sequi voluptatem, ea
+          expedita eos nemo totam blanditiis tenetur consequatur nesciunt
+          tempore dignissimos debitis sit laborum non deleniti soluta vitae
+          veritatis dicta cupiditate? Perferendis id ratione doloremque
+          perspiciatis blanditiis odio fugit tenetur libero minima, rem nemo
+          natus deserunt dignissimos eveniet dicta! Facere molestias sunt alias
+          corporis, repellendus eaque maxime provident? Quas itaque enim numquam
+          neque quasi illum, explicabo veniam, molestiae laborum dignissimos
+          iure alias consequuntur voluptate atque amet esse nam. Tempore
+          accusamus laudantium, nam animi a similique quis officia sapiente
+          accusantium eaque, quasi distinctio ullam doloribus dicta!`;
+
+  description += `
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos
+  excepturi quae ab sequi voluptatem, ea expedita eos nemo totam
+  blanditiis tenetur consequatur nesciunt tempore dignissimos debitis
+  sit laborum non deleniti soluta vitae veritatis dicta cupiditate?
+  Perferendis id ratione doloremque perspiciatis blanditiis odio fugit
+  tenetur libero minima, rem nemo natus deserunt dignissimos eveniet
+  dicta! Facere molestias sunt alias corporis, repellendus eaque maxime
+  provident? Quas itaque enim numquam neque quasi illum, explicabo
+  veniam, molestiae laborum dignissimos iure alias consequuntur`;
 
   return (
     <div className="company-page">
@@ -138,44 +175,32 @@ const CompanyPage: React.FC<CompanyPageProps> = () => {
         </div>
       </div>
 
-      <div data-open={accordionOpened.toString()} className="company-accordion">
+      <div
+        data-open={accordionOpened.toString()}
+        data-big={description.length > 600}
+        className="company-accordion"
+      >
         <div className="text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos
-          excepturi quae ab sequi voluptatem, ea expedita eos nemo totam
-          blanditiis tenetur consequatur nesciunt tempore dignissimos debitis
-          sit laborum non deleniti soluta vitae veritatis dicta cupiditate?
-          Perferendis id ratione doloremque perspiciatis blanditiis odio fugit
-          tenetur libero minima, rem nemo natus deserunt dignissimos eveniet
-          dicta! Facere molestias sunt alias corporis, repellendus eaque maxime
-          provident? Quas itaque enim numquam neque quasi illum, explicabo
-          veniam, molestiae laborum dignissimos iure alias consequuntur
-          voluptate atque amet esse nam. Tempore accusamus laudantium, nam animi
-          a similique quis officia sapiente accusantium eaque, quasi distinctio
-          ullam doloribus dicta! Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Beatae quos excepturi quae ab sequi voluptatem, ea
-          expedita eos nemo totam blanditiis tenetur consequatur nesciunt
-          tempore dignissimos debitis sit laborum non deleniti soluta vitae
-          veritatis dicta cupiditate? Perferendis id ratione doloremque
-          perspiciatis blanditiis odio fugit tenetur libero minima, rem nemo
-          natus deserunt dignissimos eveniet dicta! Facere molestias sunt alias
-          corporis, repellendus eaque maxime provident? Quas itaque enim numquam
-          neque quasi illum, explicabo veniam, molestiae laborum dignissimos
-          iure alias consequuntur voluptate atque amet esse nam. Tempore
-          accusamus laudantium, nam animi a similique quis officia sapiente
-          accusantium eaque, quasi distinctio ullam doloribus dicta!
+          <p>{description}</p>
         </div>
-        <div
-          onClick={() => {
-            setAccordionOpened((prev) => !prev);
-          }}
-          className="more-less"
-        >
-          Читать описание
-          <ArrowIcon
-            className="arrow-icon"
-            rotate={accordionOpened ? 90 : 270}
-          />
-        </div>
+        {description.length > 600 && (
+          <div
+            onClick={() => {
+              setAccordionOpened((prev) => !prev);
+            }}
+            className="more-less"
+          >
+
+            {
+              accordionOpened?'Скрыть описание' :'Читать описание'
+            }
+            
+            <ArrowIcon
+              className="arrow-icon"
+              rotate={accordionOpened ? 90 : 270}
+            />
+          </div>
+        )}
       </div>
 
       <Title text="Наши услуги" />
@@ -217,33 +242,91 @@ const CompanyPage: React.FC<CompanyPageProps> = () => {
           },
         ]}
       />
-      {vacancies.length > slides ? (
-        <SliderWrapper
-          decrement={decrementSlide}
-          increment={incrementSlide}
-          swiperRef={swiperRef}
-        >
-          <Swiper
-            loop
-            ref={swiperRef}
-            spaceBetween={30}
-            slidesPerView={Math.min(slides || 1, vacancies.length)}
-            className="swiper"
+      <div className="vacansies">
+        <Title text="Вакансии компании" />
+        {vacancies.length > slides ? (
+          <SliderWrapper
+            decrement={decrementSlide}
+            increment={incrementSlide}
+            swiperRef={swiperRef}
           >
+            <Swiper
+              ref={swiperRef}
+              spaceBetween={30}
+              // slidesPerView={3}
+              slidesPerView={Math.min(slides || 1, vacancies.length)}
+              className="swiper"
+            >
+              {vacancies.map((el, ind) => (
+                <SwiperSlide key={ind}>
+                  <VacancyCard {...el} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </SliderWrapper>
+        ) : (
+          <div className="flex">
             {vacancies.map((el, ind) => (
-              <SwiperSlide key={ind}>
-                <VacancyCard {...el} />
-              </SwiperSlide>
+              <VacancyCard key={ind} {...el} />
             ))}
-          </Swiper>
-        </SliderWrapper>
-      ) : (
-        <div className="flex">
-          {vacancies.map((el, ind) => (
-            <VacancyCard key={ind} {...el} />
-          ))}
+          </div>
+        )}
+      </div>
+      <div className="company-reviews-section">
+        <Title text="Отзывы о компании" />
+        <div className="reviews">
+          <div className="reviews-div">
+            <div className="top">
+              <TopBadge type="top">Топ 5</TopBadge>
+              <p className="review-company-title">Smart Home Security</p>
+            </div>
+            <div className="review-rating">
+              <Rating rating={4.7} />
+              <Stars stars={4} />
+              <p className="reviews-count">12 отзывов</p>
+            </div>
+            <hr className="review-hr" />
+            <div className="add-review">
+              <p>Поставьте нам оценку</p>
+              <Button>Оставить отзыв</Button>
+            </div>
+          </div>
+          <div className="best-offer">
+            <p className="offer-tittle">Лучшее предложение компании</p>
+            <div className="best-offer-item">
+              <TopBadge type="new">Лучшая цена <LikeIcon/> </TopBadge>
+              <div>
+                <p className="offer-tittle">Охранная сигнализация</p>
+              </div>
+              <div>
+                <p>В предложение входит</p>
+              </div>
+              <div>
+                <p className="orange">Оплачивается 1 раз</p>
+                <p>
+                  Комплект охранного оборудования от 40 000 Т <br />
+                  <br />
+                  *зависит от охраняемого объекта
+                  <br />
+                </p>
+              </div>
+              <div>
+                <p className="light-blue offer-medium">
+                  Монтаж оборудования
+                  <br />
+                </p>
+                <p className="offer-big light-blue">0 Т</p>
+              </div>
+              <div>
+                <p className="orange offer-medium">Оплачивается ежемесячно </p>
+                <p>Абонплата</p>
+                <p className="offer-big">10 000 Т</p>
+              </div>
+              <Button>Подать заявку</Button>
+            </div>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

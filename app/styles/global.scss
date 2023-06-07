@@ -4,6 +4,7 @@
 }
 
 @mixin icon-color($color) {
+  color: $color;
   path {
     color: $color;
     fill: $color;

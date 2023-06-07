@@ -7,6 +7,7 @@ import {
   ILink,
 } from "../types/interfaces";
 import { HandbookService } from "../services/HandbookService";
+import { error } from "console";
 
 export function useCompanies(
   page: number,
@@ -34,11 +35,12 @@ export function useCompanies(
   }
 
   useEffect(() => {
-    (async () => {
-      const resp = await HandbookService.fetchCompanies(queryParams, page);
-      setCompanies(resp.data.data);
-      setPagesCount(resp.data.meta.last_page);
-    })();
+    HandbookService.fetchCompanies(queryParams, page)
+      .then((resp) => {
+        setCompanies(resp.data.data);
+        setPagesCount(resp.data.meta.last_page);
+      })
+      .catch((error) => console.log(error));
   }, [service_ids, city, search, page]);
   return { companies, pagesCount };
 }
@@ -47,10 +49,9 @@ export function useCities() {
   const [cities, setCities] = useState<ICity[]>([]);
 
   useEffect(() => {
-    (async () => {
-      const citiesResp = (await HandbookService.fetchCities()).data.data;
-      setCities(citiesResp);
-    })();
+    HandbookService.fetchCities()
+      .then((resp) => setCities(resp.data.data))
+      .catch((error) => console.log(error));
   }, []);
   return cities;
 }
@@ -58,10 +59,7 @@ export function useFilters() {
   const [filters, setFilters] = useState<IFilter[]>([]);
 
   useEffect(() => {
-    (async () => {
-      const filtersResp = (await HandbookService.fetchFilters()).data.data;
-      setFilters(filtersResp);
-    })();
+    HandbookService.fetchFilters().then(resp=>setFilters(resp.data.data))
   }, []);
   return filters;
 }

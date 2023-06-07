@@ -95,7 +95,7 @@
         position: absolute;
         content: "";
         background: linear-gradient(to top, white, rgba(255, 255, 255, 0));
-        opacity: 0;
+        opacity: 1;
 
         left: 0;
         right: 0;
@@ -108,8 +108,12 @@
     &[data-open="true"] {
       & .text {
         max-height: 1000px;
+        &::after{
+          opacity: 0;
+        }
       }
     }
+
     &[data-open="false"] {
       & .text {
         max-height: 100px;
@@ -119,6 +123,15 @@
         }
       }
     }
+
+    &[data-big="false"] {
+      & .text {
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+
 
     & .more-less {
       cursor: pointer;
@@ -142,7 +155,7 @@
       @extend %shadow-card;
       padding: 25px;
       flex-direction: column;
-      height: 100%;
+      height: fit-content;
     }
 
     & .tab-name-wrap {
@@ -163,6 +176,91 @@
     & hr {
       border: 1px solid #f4f4f7;
       margin: 30px -60px;
+    }
+  }
+
+  & .company-reviews-section {
+    & .reviews {
+      @extend %shadow-card;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 74px;
+      padding: 40px;
+    }
+
+    & .top {
+      display: flex;
+      gap: $default-gap;
+    }
+
+    & .review-company-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    & .review-rating {
+      display: flex;
+      align-items: center;
+      gap: $default-gap;
+      margin-top: 30px;
+    }
+
+    & .review-hr {
+      border: 1px solid #f4f4f7;
+      margin: $default-gap 0;
+    }
+
+    & .add-review {
+      display: flex;
+      align-items: center;
+      gap: $default-gap;
+
+      & p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    & .best-offer {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      & .best-offer-item {
+        background: #f4f4f7;
+        padding: 30px 35px 35px;
+        box-sizing: border-box;
+        border-radius: $default-radius;
+      }
+
+      & .offer-tittle {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      & div {
+        margin-bottom: 20px;
+      }
+
+      & p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      & .offer-medium {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      & .offer-big {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+      }
     }
   }
 }

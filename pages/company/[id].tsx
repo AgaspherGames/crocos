@@ -1,3 +1,4 @@
+import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import NavBar from "@/app/components/NavBar/NavBar";
 import CompanyPage from "@/app/pages/Company/CompanyPage";
@@ -10,6 +11,7 @@ const Company: React.FC<CompanyProps> = () => {
       <Header />
       <NavBar />
       <CompanyPage />
+      <Footer/>
     </div>
   );
 };
