@@ -132,6 +132,8 @@ const CompanyPage: React.FC<CompanyPageProps> = ({data}) => {
   provident? Quas itaque enim numquam neque quasi illum, explicabo
   veniam, molestiae laborum dignissimos iure alias consequuntur`;
 
+  description = data.description;
+
   return (
     <div className="company-page">
       <BackgroundLine />
