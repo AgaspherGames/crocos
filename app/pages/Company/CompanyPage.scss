@@ -8,6 +8,7 @@
 .company-page {
   & .company-card {
     display: flex;
+    gap: 60px;
     justify-content: space-between;
     align-items: center;
 
@@ -15,6 +16,10 @@
     background: #ffffff;
     box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.02);
     border-radius: $default-radius;
+
+    & .logo{
+      border-radius: 1000px;
+    }
 
     & .info-top {
       display: flex;

@@ -29,11 +29,19 @@ async function fetchFilters(lang: string = "ru") {
   });
   return response;
 }
+async function fetchCompanyService(id: number | string, lang: string = "ru") {
+  const headers = {
+    "accept-language": lang,
+  };
+  const response = await http.get(`/security-services/${id}`, {
+    headers,
+  });
+  return response;
+}
 
 export const HandbookService = {
   fetchCompanies,
   fetchCities,
-  fetchFilters
+  fetchFilters,
+  fetchCompanyService,
 };
-
-

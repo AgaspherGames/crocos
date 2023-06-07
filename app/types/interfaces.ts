@@ -55,7 +55,10 @@ export interface ICityItem extends IRegion {
 }
 
 export interface ILink {
-  url: string|null;
+  url: string | null;
   label: string;
   active: boolean;
 }
+
+
+

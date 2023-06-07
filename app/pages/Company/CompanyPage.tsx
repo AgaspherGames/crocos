@@ -24,9 +24,14 @@ import VacancyCard, {
 } from "@/app/components/MainPage/Vacancies/VacancyCard/VacancyCard";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import LikeIcon from "@/app/icons/LikeIcon";
-interface CompanyPageProps {}
+import { ICompanyService } from "@/app/types/ICompanyService";
 
-const CompanyPage: React.FC<CompanyPageProps> = () => {
+interface CompanyPageProps  {
+  data: ICompanyService
+}
+
+
+const CompanyPage: React.FC<CompanyPageProps> = ({data}) => {
   const [accordionOpened, setAccordionOpened] = useState(false);
 
   const [vacancies, setVacancies] = useState<VacancyCardProps[]>([
@@ -137,13 +142,14 @@ const CompanyPage: React.FC<CompanyPageProps> = () => {
       />
       <div className="company-card">
         <Image
+        className="logo"
           alt="company image"
-          src={"/assets/services/securityIcon.png"}
+          src={data.logo}
           width={180}
           height={180}
         />
         <div className="company-info">
-          <div className="company-title">Smart Home Security</div>
+          <div className="company-title">{data.title}</div>
           <div className="info-top">
             <TopBadge type="top">Топ 5</TopBadge>
             <Rating rating={4.7} />
@@ -151,7 +157,7 @@ const CompanyPage: React.FC<CompanyPageProps> = () => {
               <div className="with-icon">
                 <GeoIcon />
                 <div>
-                  <p>Алматы, мкр.Таусамалы, с/т Кокбель, 32</p>
+                  <p>{data.address}</p>
                 </div>
               </div>
               <Link href={"#"}>Еще адреса</Link>
