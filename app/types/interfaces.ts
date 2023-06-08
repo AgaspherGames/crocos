@@ -24,11 +24,13 @@ export interface ICompany {
   presentation: string;
   top_five?: number;
   seo_title: string;
-  reviews: {
-    id: number;
-    rating: number;
-    description: string;
-  }[];
+  reviews: IReview[];
+}
+
+export interface IReview{
+  id: number;
+  rating: number;
+  description: string;
 }
 
 export interface IFilter {
@@ -58,6 +60,18 @@ export interface ILink {
   url: string | null;
   label: string;
   active: boolean;
+}
+
+
+export interface IService {
+  description:string|null
+handbook_security_service_type: {
+  hint: string;
+  id: number;
+  title: string;
+}
+negotiated: null;
+price_from: number;
 }
 
 

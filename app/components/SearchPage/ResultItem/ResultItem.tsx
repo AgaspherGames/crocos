@@ -9,6 +9,7 @@ import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
 import { ICompany } from "@/app/types/interfaces";
 import Stars from "../../Stars/Stars";
 import Link from "next/link";
+import { AvgRating } from "@/app/utils/features";
 interface ResultItemProps {
   company: ICompany;
 }
@@ -18,7 +19,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ company }) => {
     <div className="result-item">
       <div className="card-top">
         {!!company.top_five && <TopBadge type="top">Топ 5</TopBadge>}
-        {!!company.rating && <Rating rating={company.rating} />}
+        {!!company.rating && <Rating rating={AvgRating(company.reviews)} />}
         <div className="with-icon orange">
           <GeoIcon />
           <p>{company.address}</p>

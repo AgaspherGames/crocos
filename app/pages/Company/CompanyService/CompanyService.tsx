@@ -1,20 +1,25 @@
 import Button from '@/app/components/Button/Button';
 import ArrowCircleIcon from '@/app/icons/ArrowCircleIcon';
 import BagHappyIcon from '@/app/icons/BagHappyIcon';
+import { IFilter, IService } from '@/app/types/interfaces';
 import React from 'react';
-interface CompanyServiceProps {}
+interface CompanyServiceProps {
+  service: IService
+}
 
-const CompanyService: React.FC<CompanyServiceProps> = () => {
+const CompanyService: React.FC<CompanyServiceProps> = ({
+  service
+}) => {
   return ( <div className='company-service'>
         <div className="category">
             <BagHappyIcon/>
-            <p>Охрана коммерческих помещений</p>
+            <p>{service.handbook_security_service_type.title}</p>
         </div>
         <div className="price-div">
             <p className="price">
-            от 5000 тг./ в месяц
+            от {service.price_from} тг/ в месяц
             </p>
-            <p className="info">ТРЦ, магазин, ресторан</p>
+            <p className="info">{service.handbook_security_service_type.hint}</p>
         </div>
         <Button withIcon >Заказать услугу <ArrowCircleIcon /> </Button>
   </div> );

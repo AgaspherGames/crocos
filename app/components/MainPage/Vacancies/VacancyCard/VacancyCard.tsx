@@ -3,11 +3,13 @@ import FlatButton from "@/app/components/FlatButton/FlatButton";
 import Image from "next/image";
 import GeoIcon from "@/app/icons/GeoIcon";
 export interface VacancyCardProps {
-  badgeText: string;
+  badgeText?: string;
   city: string;
   text: string;
   salary: string;
   experience: string;
+  companyTitle?: string;
+  companyImage?: string;
 }
 
 const VacancyCard: React.FC<VacancyCardProps> = ({
@@ -16,15 +18,20 @@ const VacancyCard: React.FC<VacancyCardProps> = ({
   text,
   salary,
   experience,
+  companyTitle = "Security",
+  companyImage = "/assets/services/securityIcon.png",
 }) => {
   return (
     <div className="card">
       <div className="card-top">
-        <FlatButton color="green" outline>
-          {badgeText}
-        </FlatButton>
+        {badgeText && (
+          <FlatButton color="green" outline>
+            {badgeText}
+          </FlatButton>
+        )}
+
         <FlatButton color="orange">
-          <GeoIcon/>
+          <GeoIcon />
           {city}
         </FlatButton>
       </div>
@@ -33,9 +40,10 @@ const VacancyCard: React.FC<VacancyCardProps> = ({
           width={27}
           height={27}
           alt="Security"
-          src="/assets/services/securityIcon.png"
+          src={companyImage}
+          className="logo"
         />
-        <p className="security-bold">Security</p>
+        <p className="security-bold">{companyTitle}</p>
       </div>
       <div className="info">
         <p>{text}</p>

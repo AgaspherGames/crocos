@@ -79,7 +79,7 @@ const Search: React.FC<SearchProps> = () => {
     city,
     debouncedSearch
   );
-  console.log(pagesCount);
+  console.log(companies);
 
   function addFilter(id: number) {
     setActiveFilters((prev) => [...prev, id]);
