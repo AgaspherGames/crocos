@@ -26,34 +26,28 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
       )
     );
   }
-  const servicesWithInfo: any = {};
-  const ServicesWithInfo: Service[] = [];
+  const servicesWithInfo: Service[] = [];
   data.security_service_types.map((el) => {
     const category: IFilter | undefined = getCategory(
       el.handbook_security_service_type.title
     );
     if (!category) return;
-    servicesWithInfo[category.title] = [
-      ...(servicesWithInfo[category.title] || []),
-      el,
-    ];
 
-    const index = ServicesWithInfo.findIndex(
+    const index = servicesWithInfo.findIndex(
       (serviceObj: any) => serviceObj.title == category.title
     );
     if (~index) {
-      ServicesWithInfo[index] = {
+      servicesWithInfo[index] = {
         title: category.title,
-        services: [...ServicesWithInfo[index].services, el],
+        services: [...servicesWithInfo[index].services, el],
       };
     } else {
-      ServicesWithInfo.push({
+      servicesWithInfo.push({
         title: category.title,
         services: [el],
       });
     }
   });
-  // console.log(ServicesWithInfo);
   // console.log(servicesWithInfo);
 
   return (
@@ -61,7 +55,7 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
       <Title text="Наши услуги" />
       <Tabs
         className="services-tabs"
-        tabs={ServicesWithInfo.map((el) => ({
+        tabs={servicesWithInfo.map((el) => ({
           name: (
             <div className="tab-name-wrap">
               <BagHappyIcon /> {el.title}

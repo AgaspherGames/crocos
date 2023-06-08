@@ -5,7 +5,7 @@ import NavBar from "@/app/components/NavBar/NavBar";
 import { useFilters } from "@/app/hooks/handbookHooks";
 import CompanyPage from "@/app/pages/Company/CompanyPage";
 import { HandbookService } from "@/app/services/HandbookService";
-import { ICompanyService } from "@/app/types/ICompanyService";
+import { ICReview, ICompanyService } from "@/app/types/ICompanyService";
 import { IFilter } from "@/app/types/interfaces";
 import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
@@ -15,32 +15,31 @@ interface CompanyProps {
   services: IFilter[];
 }
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   return {
-//     paths: [
-//       {
-//         params: {
-//           id: '1',
-//         },
-//       },
-//     ],
-//     fallback: true,
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps<{
-//   data: CompanyProps;
-// }> = async () => {
-//   const res = await HandbookService.fetchCompanyService(1);
-//   return { props: { data: res.data.data } };
-// };
+interface IQuery {
+  id: number;
+}
 
 export const getServerSideProps: GetServerSideProps<{
   data: CompanyProps;
-}> = async () => {
-  const res = await HandbookService.fetchCompanyService(1);
-  const services: IService[] = (await HandbookService.fetchFilters()).data.data;
-  return { props: { data: res.data.data, services } };
+}> = async ({ query, res }) => {
+  if (!query.id) {
+    return {
+      notFound: true,
+    };
+  }
+  const id = +query.id;
+
+  try {
+    const response = await HandbookService.fetchCompanyService(id);
+    const services: IService[] = (await HandbookService.fetchFilters()).data
+      .data;
+      //.map((company:ICompany)=>({...company, reviews: company.reviews.filter(e=>e) }))
+    return { props: { data: {...response.data.data, reviews: response.data.data.reviews.filter((e:ICReview)=>e)}, services } };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 const Company: React.FC<CompanyProps> = ({ data, services }) => {

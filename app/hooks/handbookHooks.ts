@@ -37,7 +37,7 @@ export function useCompanies(
   useEffect(() => {
     HandbookService.fetchCompanies(queryParams, page)
       .then((resp) => {
-        setCompanies(resp.data.data);
+        setCompanies(resp.data.data.map((company:ICompany)=>({...company, reviews: company.reviews.filter(e=>e) })));
         setPagesCount(resp.data.meta.last_page);
       })
       .catch((error) => console.log(error));

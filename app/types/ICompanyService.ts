@@ -21,7 +21,7 @@ export interface ICompanyService {
   seo_description: string;
   seo_keywords: string;
   reviews: ICReview[];
-  vacancies: ICVacancy[];
+  vacancies: ICVacancy[] || string[];
   handbook_cities: ICHandbook[];
   handbook_regions: ICHandbookRegion[];
   handbook_security_service_types: ICHandbookSecurityServiceType[];

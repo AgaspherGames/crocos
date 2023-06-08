@@ -59,7 +59,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ company }) => {
             <p className="bold">Абонентская плата от</p>
             <p className="cost-value">По договоренности</p>
           </div>
-          <Link href={'/company/1'} >
+          <Link href={`/company/${company.id}`} >
             <FlatButton outline>
               Контакты <ArrowCircleIcon />{" "}
             </FlatButton>

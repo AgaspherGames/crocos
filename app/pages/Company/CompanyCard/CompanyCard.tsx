@@ -28,8 +28,11 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ data, rating }) => {
       <div className="company-info">
         <div className="company-title">{data.title}</div>
         <div className="info-top">
-          {data.top_five && <TopBadge type="top">Топ 5</TopBadge>}
-          <Rating rating={rating} />
+          {!!data.top_five && <TopBadge type="top">Топ 5</TopBadge>}
+          {
+            !!rating&&<Rating rating={rating} />
+          }
+          
           <div className="address">
             <div className="with-icon">
               <GeoIcon />
