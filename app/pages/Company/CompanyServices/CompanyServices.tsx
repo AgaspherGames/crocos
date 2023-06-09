@@ -19,17 +19,18 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
     services: IService[];
   }
 
-  function getCategory(serviceTitle: string): IFilter | undefined {
+  function getCategory(id: number): IFilter | undefined {
     return services.find((item) =>
       item.handbook_security_service_types.some(
-        (handbookService) => handbookService.title == serviceTitle
+        (handbookService) => handbookService.id == id
       )
     );
   }
+  
   const servicesWithInfo: Service[] = [];
   data.security_service_types.map((el) => {
     const category: IFilter | undefined = getCategory(
-      el.handbook_security_service_type.title
+      el.handbook_security_service_type.id
     );
     if (!category) return;
 
@@ -46,7 +47,7 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
         title: category.title,
         services: [el],
       });
-    }
+    }   
   });
   // console.log(servicesWithInfo);
 

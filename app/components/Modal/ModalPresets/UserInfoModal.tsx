@@ -1,19 +1,16 @@
 import React, { LegacyRef, RefObject, useRef } from "react";
-import Modal from "../Modal/Modal";
-import Button from "../Button/Button";
+import Modal from "../Modal";
+import Button from "../../Button/Button";
 import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
-import ModalLabel from "../Modal/ModalLabel/ModalLabel";
-import ModalInput from "../Modal/ModalInput/ModalInput";
-import ModalForm from "../Modal/ModalForm/ModalForm";
-interface ConsultationModalProps {
+import ModalLabel from "../ModalLabel/ModalLabel";
+import ModalInput from "../ModalInput/ModalInput";
+import ModalForm from "../ModalForm/ModalForm";
+interface UserInfoModalProps {
   opened: boolean;
   setOpened: Function;
 }
 
-const ConsultationModal: React.FC<ConsultationModalProps> = ({
-  opened,
-  setOpened,
-}) => {
+const UserInfoModal: React.FC<UserInfoModalProps> = ({ opened, setOpened }) => {
   const phoneInput = useRef<LegacyRef<HTMLInputElement>>();
   const [phone, setPhone] = React.useState("+7 (___) ___ __ __");
   const [city, setCity] = React.useState("");
@@ -28,7 +25,6 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
     arr.length > 12 && arr.splice(12, 0, " ");
     new_value = maxLength(arr.join(""), 18);
     setPhone(new_value);
-    
   }
 
   function maxLength(string: string, len: number) {
@@ -85,4 +81,4 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({
   );
 };
 
-export default ConsultationModal;
+export default UserInfoModal;

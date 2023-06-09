@@ -1,3 +1,4 @@
+import ConsultationButton from "@/app/components/ConsultationButton/ConsultationButton";
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import { IService } from "@/app/components/MainPage/Services/Service";
@@ -50,6 +51,7 @@ const Company: React.FC<CompanyProps> = ({ data, services }) => {
       <Header />
       <NavBar />
       <CompanyPage data={data} services={services} />
+      {/* <ConsultationButton/> */}
       <Footer />
     </div>
   );

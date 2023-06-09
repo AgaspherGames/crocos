@@ -12,6 +12,8 @@ interface CompanyReviewsProps {
 }
 
 const CompanyReviews: React.FC<CompanyReviewsProps> = ({ data, rating }) => {
+  console.log(data);
+
   return (
     <div className="company-reviews-section">
       <Title text="Отзывы о компании" />
@@ -27,6 +29,15 @@ const CompanyReviews: React.FC<CompanyReviewsProps> = ({ data, rating }) => {
             <p className="reviews-count">{data.reviews.length} отзывов</p>
           </div>
           <hr className="review-hr" />
+
+          {data.reviews.map((review) => (
+            <div className="review">
+              <Stars stars={review.rating} />
+              <p>{review.description}</p>
+              <hr className="review-hr" />
+            </div>
+          ))}
+
           <div className="add-review">
             <p>Поставьте нам оценку</p>
             <Button>Оставить отзыв</Button>

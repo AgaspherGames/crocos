@@ -2,7 +2,7 @@ import FacebookIcon from "@/app/icons/FacebookIcon";
 import InstagramIcon from "@/app/icons/InstagramIcon";
 import LogoIcon from "@/app/icons/LogoIcon";
 import WhatsappIcon from "@/app/icons/WhatsappIcon";
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import GeoIcon from "@/app/icons/GeoIcon";
 import MapPinIcon from "@/app/icons/MapPinIcon";
@@ -10,9 +10,11 @@ import EmailIcon from "@/app/icons/EmailIcon";
 import PhoneIcon from "@/app/icons/PhoneIcon";
 import { links } from "@/app/constants/links";
 import BackgroundLine from "../BackgroundLine/BackgroundLine";
+import ConsultationModal from "../ConsultationButton/ConsultationModal";
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
+  const [modalOpened, setModalOpened] = useState(false);
   return (
     <div className="footer">
       <div className="footer-top">
@@ -38,7 +40,8 @@ const Footer: React.FC<FooterProps> = () => {
           <a href="">Обучение</a>
           <a href="">Журнал</a>
         </div>
-        <Button>Заказать консультацию</Button>
+        <Button onClick={() => {	setModalOpened(true) }} >Заказать консультацию</Button>
+        <ConsultationModal opened={modalOpened} setOpened={setModalOpened}  />
       </div>
       <div className="footer-bottom">
         <div className="contacts">
