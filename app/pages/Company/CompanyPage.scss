@@ -8,22 +8,39 @@
 .company-page {
   & .company-card {
     display: flex;
+    flex-direction: column;
     gap: 60px;
     justify-content: space-between;
     align-items: center;
 
-    padding: 62px 90px;
+    text-align: center;
+
+    padding: 48px 12px;
     background: #ffffff;
     box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.02);
     border-radius: $default-radius;
 
-    & .logo{
-      border-radius: 1000px;
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      padding: 62px 90px;
+      text-align: unset;
     }
 
     & .info-top {
       display: flex;
       gap: 40px;
+      align-items: center;
+      flex-direction: column;
+
+      & .rating-badge {
+        display: flex;
+        gap: 12px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        align-items: unset;
+      }
     }
 
     & .address {
@@ -58,14 +75,26 @@
     & .info-bottom {
       display: flex;
       gap: 20px;
+      justify-content: center;
+
+      @media screen and (min-width: 1024px) {
+        justify-content: unset;
+      }
     }
 
     & .buttons {
       display: flex;
       flex-direction: column;
-      justify-content: end;
-      align-items: end;
+
       gap: 10px;
+
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: 1024px) {
+        justify-content: end;
+        align-items: end;
+      }
 
       button {
         display: flex;
@@ -113,7 +142,7 @@
     &[data-open="true"] {
       & .text {
         max-height: 1000px;
-        &::after{
+        &::after {
           opacity: 0;
         }
       }
@@ -137,7 +166,6 @@
       }
     }
 
-
     & .more-less {
       cursor: pointer;
       display: flex;
@@ -153,8 +181,14 @@
 
   & .services-tabs {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
     gap: $default-gap;
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 4fr;
+      grid-template-rows: 1fr;
+    }
 
     & .tab-titles {
       @extend %shadow-card;
@@ -188,9 +222,16 @@
     & .reviews {
       @extend %shadow-card;
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto;
       gap: 74px;
       padding: 40px;
+
+      @media screen and (min-width: 1024px) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+      }
+
     }
 
     & .top {
