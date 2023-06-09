@@ -31,7 +31,7 @@ const CompanyReviews: React.FC<CompanyReviewsProps> = ({ data, rating }) => {
           <hr className="review-hr" />
 
           {data.reviews.map((review) => (
-            <div className="review">
+            <div key={review.id} className="review">
               <Stars stars={review.rating} />
               <p>{review.description}</p>
               <hr className="review-hr" />
