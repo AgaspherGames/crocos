@@ -8,9 +8,23 @@ import ModalForm from "../ModalForm/ModalForm";
 interface UserInfoModalProps {
   opened: boolean;
   setOpened: Function;
+  onSubmitForm: (data: {
+    phone: string;
+    city: string;
+    name: string;
+    email: string;
+  }) => void;
+  title?: string;
+  subTitle?: string;
 }
 
-const UserInfoModal: React.FC<UserInfoModalProps> = ({ opened, setOpened }) => {
+const UserInfoModal: React.FC<UserInfoModalProps> = ({
+  opened,
+  setOpened,
+  onSubmitForm,
+  title = "Онлайн заявка",
+  subTitle = "Оставте заявку и мы с вами свяжемся",
+}) => {
   const phoneInput = useRef<LegacyRef<HTMLInputElement>>();
   const [phone, setPhone] = React.useState("+7 (___) ___ __ __");
   const [city, setCity] = React.useState("");
@@ -31,11 +45,15 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({ opened, setOpened }) => {
     return string.slice(0, len);
   }
 
+  function onSubmit() {
+    onSubmitForm({phone, city, name, email});
+  }
+
   return (
     <Modal opened={opened} setOpened={setOpened}>
       <div className="consultation-modal">
-        <p className="modal-title">Онлайн заявка</p>
-        <p className="modal-subtitle">Оставте заявку и мы с вами свяжемся</p>
+        <p className="modal-title">{title}</p>
+        <p className="modal-subtitle">{subTitle}</p>
         <ModalForm>
           <ModalLabel htmlFor="name"> Ваше имя </ModalLabel>
           <ModalInput
@@ -72,7 +90,7 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({ opened, setOpened }) => {
             id="email"
             type="text"
           />
-          <Button>
+          <Button onClick={onSubmit}>
             Отправить заявку <ArrowCircleIcon className="arrow-icon" />{" "}
           </Button>
         </ModalForm>

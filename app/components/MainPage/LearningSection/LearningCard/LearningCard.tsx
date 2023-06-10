@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "@/app/components/Button/Button";
 import CourseBadge from "../CourseBadge/CourseBadge";
+import UserInfoModal from "@/app/components/Modal/ModalPresets/UserInfoModal";
 export interface LearningCardProps {
   imgUrl: string;
   text: string;
@@ -13,6 +14,7 @@ const LearningCard: React.FC<LearningCardProps> = ({
   text,
   offline = false,
 }) => {
+  const [modalOpened, setModalOpened] = React.useState(false);
   return (
     <div className="card">
       <div className="card-top">
@@ -26,8 +28,11 @@ const LearningCard: React.FC<LearningCardProps> = ({
       <CourseBadge offline={offline} />
       <div className="card-bottom">
         <p className="info">{text}</p>
-        <Button>Подать заявку</Button>
+        <Button
+        onClick={() => {	setModalOpened(true) }}
+        >Подать заявку</Button>
       </div>
+      <UserInfoModal opened={modalOpened}  setOpened={setModalOpened} onSubmitForm={() => {	 }} title="Онлайн заявка" />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import TopBadge from "@/app/components/Badges/TopBadge";
 import Image from "next/image";
 import FlatButton from "@/app/components/FlatButton/FlatButton";
 import Rating from "@/app/components/Rating/Rating";
+import UserInfoModal from "@/app/components/Modal/ModalPresets/UserInfoModal";
 
 export interface SecurityCardProps {
   badge: {
@@ -17,6 +18,7 @@ export interface SecurityCardProps {
 }
 
 const SecurityCard: React.FC<SecurityCardProps> = ({badge,rating,price,text}) => {
+  const [modalOpened, setModalOpened] = React.useState(false);
   return (
     <div className="card">
       <div className="card-header">
@@ -43,8 +45,11 @@ const SecurityCard: React.FC<SecurityCardProps> = ({badge,rating,price,text}) =>
       <hr />
       <div className="card-bottom">
         <Button>Посмотреть улсуги</Button>
-        <FlatButton color="orange" >Онлайн заявка <Image  alt="send icon" src={'/icons/send.svg'} width={20} height={20} /> </FlatButton>
+        <FlatButton
+        onClick={() => {	setModalOpened(true) }}
+        color="orange" >Онлайн заявка <Image  alt="send icon" src={'/icons/send.svg'} width={20} height={20} /> </FlatButton>
       </div>
+      <UserInfoModal opened={modalOpened} setOpened={setModalOpened} onSubmitForm={() => {	 }} />
     </div>
   );
 };
