@@ -7,7 +7,7 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   setOpened: Function;
 }
 
-const Modal: React.FC<ModalProps> = ({ children, opened, setOpened }) => {
+const Modal: React.FC<ModalProps> = ({ children, opened, className, setOpened }) => {
   const ref = useRef<Element | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -22,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({ children, opened, setOpened }) => {
         e.stopPropagation()
         setOpened(false);
       }}
-      className={`modal ${opened ? "open" : ""}`}
+      className={`${className} modal ${opened ? "open" : ""}`}
     >
       <div onClick={(e) => e.stopPropagation()} className="content">
         {children}

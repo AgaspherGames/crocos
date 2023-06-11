@@ -46,15 +46,16 @@
     & .address {
       color: $orange;
 
-      & a {
+      & .more-adress{
+        padding: 0;
         margin-left: 32px;
-
         font-weight: 400;
         font-size: 14px;
         line-height: 15px;
-
+        border-bottom: 1px dashed;
         color: $light-blue;
         border-bottom: $light-blue 1px dashed;
+        border-radius: 0;
       }
     }
 
@@ -308,5 +309,15 @@
         line-height: 25px;
       }
     }
+  }
+}
+
+
+.company-page-modal{
+  .items{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
   }
 }

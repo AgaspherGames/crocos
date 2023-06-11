@@ -1,3 +1,20 @@
+@mixin fillColor($color) {
+  &:hover {
+    background-color: $color;
+    color: white;
+    path{
+      stroke: white;
+    }
+    
+    & .fill{
+      path{
+        stroke: none;
+        fill: white;
+      }
+    }
+  }
+}
+
 .o-btn {
   //outline button
   border-radius: 8px;
@@ -18,8 +35,22 @@
   white-space: nowrap;
   border: 0;
 
+  transition: all 0.3s ease;
+
   &[data-outline="true"] {
     border: 1px solid $light-blue;
+    &[data-color="blue"] {
+      @include fillColor($light-blue);
+    }
+    &[data-color="orange"] {
+      @include fillColor($orange);
+    }
+    &[data-color="green"] {
+      &:hover {
+        background-color: $light-green;
+        color: white;
+      }
+    }
   }
 
   &[data-color="blue"] {

@@ -65,10 +65,10 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
           tab: (
             <div>
               {el.services.map((service, ind) => (
-                <>
+                <React.Fragment key={ind}>
                   <CompanyService service={service} />
                   {ind != el.services.length - 1 && <hr />}
-                </>
+                </React.Fragment>
               ))}
             </div>
           ),

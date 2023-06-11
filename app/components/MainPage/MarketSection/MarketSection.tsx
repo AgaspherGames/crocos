@@ -14,7 +14,7 @@ const MarketSection: React.FC<MarketSectionProps> = () => {
           <>
             <FlatButton outline>Смотреть все </FlatButton>
             <FlatButton outline color="orange">
-              Показать на карте <GeoIcon />
+              Показать на карте <GeoIcon className="fill" />
             </FlatButton>
           </>
         }

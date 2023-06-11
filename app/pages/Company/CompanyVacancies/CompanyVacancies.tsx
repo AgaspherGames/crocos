@@ -33,7 +33,6 @@ const CompanyVacancies: React.FC<CompanyVacanciesProps> = ({ data }) => {
     }
   });
 
-  console.log(vacancies);
 
   const [windowSize, setWindowSize] = useState(0);
   const swiperRef = useRef<SwiperRef>(null);

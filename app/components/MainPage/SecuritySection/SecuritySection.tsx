@@ -81,7 +81,7 @@ const SecuritySection: React.FC<SecuritySectionProps> = () => {
             <FlatButton outline>Смотреть все</FlatButton>
             <FlatButton outline color="orange">
               Показать на карте
-              <GeoIcon />
+              <GeoIcon className="fill" />
             </FlatButton>
           </>
         }
