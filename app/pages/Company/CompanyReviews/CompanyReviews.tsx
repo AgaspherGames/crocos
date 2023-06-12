@@ -1,6 +1,7 @@
 import TopBadge from "@/app/components/Badges/TopBadge";
 import Button from "@/app/components/Button/Button";
 import Rating from "@/app/components/Rating/Rating";
+import ReviewsCount from "@/app/components/ReviewsCount/ReviewsCount";
 import Stars from "@/app/components/Stars/Stars";
 import Title from "@/app/components/Title/Title";
 import LikeIcon from "@/app/icons/LikeIcon";
@@ -12,7 +13,7 @@ interface CompanyReviewsProps {
 }
 
 const CompanyReviews: React.FC<CompanyReviewsProps> = ({ data, rating }) => {
-  console.log(data);
+  console.log(JSON.stringify(data));
 
   return (
     <div className="company-reviews-section">
@@ -26,7 +27,7 @@ const CompanyReviews: React.FC<CompanyReviewsProps> = ({ data, rating }) => {
           <div className="review-rating">
             {!!rating && <Rating rating={rating} />}
             <Stars stars={rating} />
-            <p className="reviews-count">{data.reviews.length} отзывов</p>
+            <ReviewsCount reviews={data.reviews.length} />
           </div>
           <hr className="review-hr" />
 

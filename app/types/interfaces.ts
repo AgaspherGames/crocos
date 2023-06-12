@@ -27,6 +27,8 @@ export interface ICompany {
   reviews: IReview[];
 }
 
+
+
 export interface IReview{
   id: number;
   rating: number;

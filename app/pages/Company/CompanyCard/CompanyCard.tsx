@@ -4,6 +4,7 @@ import FlatButton from "@/app/components/FlatButton/FlatButton";
 import Modal from "@/app/components/Modal/Modal";
 import ModalTitle from "@/app/components/Modal/ModalTitle/ModalTitle";
 import Rating from "@/app/components/Rating/Rating";
+import ReviewsCount from "@/app/components/ReviewsCount/ReviewsCount";
 import Stars from "@/app/components/Stars/Stars";
 import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
 import DownloadIcon from "@/app/icons/DownloadIcon";
@@ -74,19 +75,23 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ data, rating }) => {
         </div>
         <div className="info-bottom">
           <Stars stars={rating} />
-          <p className="reviews-count">{data.reviews.length} отзывов</p>
+          <ReviewsCount reviews={data.reviews.length} />
         </div>
       </div>
       <div className="buttons">
         <Button>
           Хочу здесь работать <ArrowCircleIcon className="white-icon" />
         </Button>
-        <FlatButton outline>
-          Скачать ценовое предложение <DownloadIcon />
-        </FlatButton>
-        <FlatButton outline>
-          Скачать презентацию <DownloadIcon />
-        </FlatButton>
+        <a href={data.price_list} target="_blank" rel="noreferrer">
+          <FlatButton outline>
+            Скачать ценовое предложение <DownloadIcon />
+          </FlatButton>
+        </a>
+        <a href={data.presentation} target="_blank" rel="noreferrer">
+          <FlatButton outline>
+            Скачать презентацию <DownloadIcon />
+          </FlatButton>
+        </a>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import { ICompany } from "@/app/types/interfaces";
 import Stars from "../../Stars/Stars";
 import Link from "next/link";
 import { AvgRating } from "@/app/utils/features";
+import ReviewsCount from "../../ReviewsCount/ReviewsCount";
 interface ResultItemProps {
   company: ICompany;
 }
@@ -39,9 +40,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ company }) => {
               <div className="security-bold">
                 {company.title}
                 <Stars stars={company.rating} />
-                <p className="reviews-count">
-                  {company.reviews.length} отзывов
-                </p>
+                <ReviewsCount reviews={company.reviews.length} />
               </div>
               {company.minimal_price ? (
                 <p className="price-label">от {company.minimal_price} тнг.</p>
@@ -61,7 +60,7 @@ const ResultItem: React.FC<ResultItemProps> = ({ company }) => {
           </div>
           <Link href={`/company/${company.id}`} >
             <FlatButton outline>
-              Контакты <ArrowCircleIcon />{" "}
+              Контакты <ArrowCircleIcon />
             </FlatButton>
           </Link>
         </div>
