@@ -5,6 +5,11 @@ import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
 import ModalLabel from "../ModalLabel/ModalLabel";
 import ModalInput from "../ModalInput/ModalInput";
 import ModalForm from "../ModalForm/ModalForm";
+import { useForm } from "react-hook-form";
+import ModalInputPhone from "../ModalInput/ModalInputPhone";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 interface UserInfoModalProps {
   opened: boolean;
   setOpened: Function;
@@ -45,55 +50,84 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
     return string.slice(0, len);
   }
 
-  function onSubmit() {
-    onSubmitForm({phone, city, name, email});
+  function onSubmit(data: any) {
+    console.log(data);
+
+    // onSubmitForm({ phone, city, name, email });
   }
+
+  const schema = yup
+    .object({
+      name: yup.string().required(),
+      city: yup.string().required(),
+      phone: yup.string().required(),
+      email: yup.string().required(),
+    })
+    .required();
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  // const onSubmit = data => console.log(data);
+
+  console.log(errors.name)
 
   return (
     <Modal opened={opened} setOpened={setOpened}>
       <div className="consultation-modal">
         <p className="modal-title">{title}</p>
         <p className="modal-subtitle">{subTitle}</p>
-        <ModalForm>
-          <ModalLabel htmlFor="name"> Ваше имя </ModalLabel>
-          <ModalInput
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            id="name"
-            type="text"
-          />
-          <ModalLabel htmlFor="city">Город</ModalLabel>
-          <ModalInput
-            value={city}
-            onChange={(e) => {
-              setCity(e.target.value);
-            }}
-            id="city"
-            type="text"
-          />
-          <ModalLabel htmlFor="phone">Ваш телефон</ModalLabel>
-          <ModalInput
-            inputRef={phoneInput as RefObject<HTMLInputElement>}
-            onChange={onPhoneNumber}
-            value={phone}
-            id="phone"
-            type="text"
-          />
-          <ModalLabel htmlFor="email">Ваш email</ModalLabel>
-          <ModalInput
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            id="email"
-            type="text"
-          />
-          <Button onClick={onSubmit}>
-            Отправить заявку <ArrowCircleIcon className="arrow-icon" />{" "}
-          </Button>
-        </ModalForm>
+        <form onSubmit={handleSubmit(onSubmit)} action="">
+          <ModalForm>
+            <ModalLabel htmlFor="name"> Ваше имя </ModalLabel>
+            <ModalInput
+              register={register}
+              label="name"
+              // value={name}
+              // onChange={(e) => {
+              //   setName(e.target.value);
+              // }}
+              // id="name"
+              type="text"
+            />
+            <p>{errors.name?.message&&'Введите верное имя'}</p>
+            <ModalLabel htmlFor="city">Город</ModalLabel>
+            <ModalInput
+              register={register}
+              label="city"
+              // id="city"
+              type="text"
+            />
+            <p>{errors.city?.message&&'Введите верный город'}</p>
+            <ModalLabel htmlFor="phone">Ваш телефон</ModalLabel>
+            <ModalInputPhone
+              // inputRef={phoneInput as RefObject<HTMLInputElement>}
+              // onChange={onPhoneNumber}
+              // value={phone}
+              register={register}
+              label="phone"
+              // id="phone"
+              type="text"
+            />
+            <p>{errors.phone?.message&&'Введите верный номер телефон'}</p>
+            <ModalLabel htmlFor="email">Ваш email</ModalLabel>
+            <ModalInput
+              register={register}
+              label="email"
+              // id="email"
+              type="text"
+            />
+            <p>{errors.email?.message&&'Введите верную почту'}</p>
+              <Button onClick={e => { e.preventDefault() }}>
+              Отправить заявку <ArrowCircleIcon className="arrow-icon" />
+            </Button>
+          </ModalForm>
+        </form>
       </div>
     </Modal>
   );
