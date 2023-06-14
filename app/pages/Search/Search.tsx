@@ -31,7 +31,6 @@ const Search: React.FC<SearchProps> = () => {
   //     title: "Астана",
   //   },
   // ]);
-  const cities = useCities();
 
   const [sortsBy] = useState([
     {
@@ -62,7 +61,10 @@ const Search: React.FC<SearchProps> = () => {
     },
   ]);
 
+  const cities = useCities();
+
   const [city, setCity] = useState<ICityItem>({ ...cities[0], type: "region" });
+  
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce<string>(search, 1000);
   const [sortBy, setSortBy] = useState(sortsBy[0]);
