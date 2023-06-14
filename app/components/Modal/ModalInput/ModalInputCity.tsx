@@ -1,4 +1,5 @@
 import { useCities } from "@/app/hooks/handbookHooks";
+import { useStore } from "@/app/hooks/store";
 import React, { Ref, useEffect, useState } from "react";
 import {
   Control,
@@ -39,6 +40,12 @@ const ModalInputCity: React.FC<ModalInputCityProps> = ({
   const [cityList, setCityList] =
     useState<{ value: string; label: string }[]>();
 
+  const storeCities = useStore(state=>state.cities)
+  useEffect(() => {	
+    console.log(storeCities);
+   }, [storeCities])
+  
+
   useEffect(() => {
     setCityList(
       cities.map((el) => ({
@@ -48,7 +55,6 @@ const ModalInputCity: React.FC<ModalInputCityProps> = ({
     );
   }, [cities]);
 
-  console.log("cities", cities);
 
   return (
     <>

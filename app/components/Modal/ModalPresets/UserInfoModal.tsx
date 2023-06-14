@@ -58,7 +58,6 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
   } = useForm({
     resolver: yupResolver(schema),
   });
-  console.log('rerender');
   
   // const onSubmit = data => console.log(data);
 

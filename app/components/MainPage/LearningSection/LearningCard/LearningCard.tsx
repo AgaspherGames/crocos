@@ -3,6 +3,7 @@ import React from "react";
 import Button from "@/app/components/Button/Button";
 import CourseBadge from "../CourseBadge/CourseBadge";
 import UserInfoModal from "@/app/components/Modal/ModalPresets/UserInfoModal";
+import { useStore } from "@/app/hooks/store";
 export interface LearningCardProps {
   imgUrl: string;
   text: string;
@@ -15,6 +16,7 @@ const LearningCard: React.FC<LearningCardProps> = ({
   offline = false,
 }) => {
   const [modalOpened, setModalOpened] = React.useState(false);
+  
   return (
     <div className="card">
       <div className="card-top">
