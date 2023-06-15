@@ -15,7 +15,6 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      // justify-content: space-between;
     }
   }
 
@@ -55,7 +54,6 @@
     }
 
     @media screen and (min-width: 1740px) {
-      // max-width: 520px;
 
       :not(.security-bold) {
         font-size: 18px;

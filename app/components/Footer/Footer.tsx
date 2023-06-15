@@ -4,12 +4,10 @@ import LogoIcon from "@/app/icons/LogoIcon";
 import WhatsappIcon from "@/app/icons/WhatsappIcon";
 import React, { useState } from "react";
 import Button from "../Button/Button";
-import GeoIcon from "@/app/icons/GeoIcon";
 import MapPinIcon from "@/app/icons/MapPinIcon";
 import EmailIcon from "@/app/icons/EmailIcon";
 import PhoneIcon from "@/app/icons/PhoneIcon";
 import { links } from "@/app/constants/links";
-import BackgroundLine from "../BackgroundLine/BackgroundLine";
 import ConsultationModal from "../ConsultationButton/ConsultationModal";
 interface FooterProps {}
 

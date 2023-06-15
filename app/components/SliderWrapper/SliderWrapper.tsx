@@ -1,17 +1,10 @@
-import Image from "next/image";
 import React, {
   ReactNode,
   RefObject,
-  useEffect,
-  useRef,
-  useState,
 } from "react";
-import Button from "../Button/Button";
-// import Slide, { IPost } from "./Slides/Slide";
 import Arrow from "./Arrow/Arrow";
 
-import { Pagination, Navigation } from "swiper";
-import { SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
+import {SwiperRef } from "swiper/react";
 import "swiper/css";
 interface SliderWrapperProps {
   children: ReactNode;

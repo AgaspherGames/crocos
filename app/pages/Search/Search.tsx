@@ -19,18 +19,6 @@ import React, { useEffect, useState } from "react";
 interface SearchProps {}
 
 const Search: React.FC<SearchProps> = () => {
-  // const [cities, setCities] = useState<ICity[]>([
-  //   {
-  //     handbook_regions: [
-  //       {
-  //         id: 167,
-  //         title: "Астана",
-  //       },
-  //     ],
-  //     id: 1,
-  //     title: "Астана",
-  //   },
-  // ]);
 
   const [sortsBy] = useState([
     {

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 
 import Logo from "./Logo/Logo";
-import Icon from "@/app/icons/Icon";
 
 import Button from "../Button/Button";
-import Select from "../Select/Select";
-import GeoIcon from "@/app/icons/GeoIcon";
-import CitySelect from "./CitySelect/CitySelect";
 import WhatsappIcon from "@/app/icons/WhatsappIcon";
 import InstagramIcon from "@/app/icons/InstagramIcon";
 import FacebookIcon from "@/app/icons/FacebookIcon";

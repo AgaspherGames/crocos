@@ -1,14 +1,9 @@
 import { useCities } from "@/app/hooks/handbookHooks";
-import { useStore } from "@/app/hooks/store";
 import React, { Ref, useEffect, useState } from "react";
 import {
   Control,
-  Controller,
-  FieldValues,
-  UseFormRegister,
-  UseFormRegisterReturn,
+  Controller
 } from "react-hook-form";
-import InputMask from "react-input-mask";
 import Select from "react-select";
 
 interface ModalInputCityProps
@@ -30,18 +25,10 @@ const ModalInputCity: React.FC<ModalInputCityProps> = ({
   control,
   ...props
 }) => {
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
 
   const cities = useCities();
   const [cityList, setCityList] =
-    useState<{ value: string; label: string }[]>();
-
-  const storeCities = useStore(state=>state.cities)
-  
+    useState<{ value: string; label: string }[]>();  
 
   useEffect(() => {
     setCityList(
@@ -63,7 +50,7 @@ const ModalInputCity: React.FC<ModalInputCityProps> = ({
             <Select
               classNames={{
                 control: () => `modal-input ${className}`,
-                menu: () => "modal-select",
+                // menu: () => "modal-select",
               }}
               styles={{
                 menu: (baseStyles) => ({
@@ -82,9 +69,12 @@ const ModalInputCity: React.FC<ModalInputCityProps> = ({
                   padding: '0',
                   margin: '0'
                 }),
+                indicatorSeparator: () =>( {	
+                  display: "none"
+                 })
               }}
               options={cityList}
-              value={options.find((c) => c.value === value)}
+              value={cityList.find((c) => c.value === value)}
               onChange={(val) => onChange(val?.value)}
             />
           )}

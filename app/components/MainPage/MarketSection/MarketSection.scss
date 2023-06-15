@@ -1,13 +1,4 @@
 .market-section {
-  //   .head-title {
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: space-between;
-  //   }
-  //   .buttons {
-  //     display: flex;
-  //     gap: 12px;
-  //   }
 
   .cards {
     margin-top: 20px;
@@ -26,13 +17,6 @@
     overflow: hidden;
     border-radius: $default-radius;
     aspect-ratio: 1.5;
-    // height: 317px;
-    // background: linear-gradient(
-    //     180deg,
-    //     rgba(0, 0, 0, 0) 0%,
-    //     rgba(0, 0, 0, 0.4) 100%
-    //   ),
-    //   url("/assets/market/card-1.png");
     background-size: cover !important;
     background-position: top center !important;
     position: relative;

@@ -21,7 +21,6 @@ const MarketCard: React.FC<MarketCardProps> = ({
 }) => {
   return (
     <div
-      // style={{ background: `${background} url(${imgUrl})` }}
       className={`card ${double ? "double" : ""}`}
     >
       <Image src={imgUrl} width={1000} height={500} alt={text} />

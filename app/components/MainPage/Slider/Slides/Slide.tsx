@@ -12,7 +12,6 @@ export interface IPost {
 const Slide: React.FC<IPost> = ({ src, text, buttonText, onClick }) => {
   return (
     <div style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('${src}')`}} className="slide">
-      {/* <Image alt="Slide" src={src} width={1073} height={413} /> */}
       <div>
         <p>{text}</p>
         <Button onClick={onClick}>{buttonText}</Button>

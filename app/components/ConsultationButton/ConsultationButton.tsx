@@ -1,6 +1,5 @@
 import PhoneCallIcon from "@/app/icons/PhoneCallIcon";
 import React from "react";
-import Modal from "../Modal/Modal";
 import ConsultationModal from "./ConsultationModal";
 interface ConsultationButtonProps {}
 

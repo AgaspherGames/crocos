@@ -1,8 +1,5 @@
-import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import Button from "../../Button/Button";
+import React, { useRef, useState } from "react";
 import Slide, { IPost } from "./Slides/Slide";
-import Arrow from "./Arrow/Arrow";
 
 import { Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
@@ -74,48 +71,6 @@ const Slider: React.FC<SliderProps> = () => {
           </Swiper>
     </SliderWrapper>
   )
-
-  return (
-    <div className="slider">
-      <div className="slider-wrapper">
-        <div className="slide-line">
-          <Swiper
-            onSlideChange={() => {
-              setCurrentSlide(swiperRef.current?.swiper.realIndex || 0);
-            }}
-            ref={swiperRef}
-            slidesPerView={"auto"}
-            loop={true}
-            pagination={{
-              clickable: true,
-            }}
-            spaceBetween={24}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className="swiper"
-          >
-            {slides.map((el) => (
-              <SwiperSlide key={el.src}>
-                <Slide {...el} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-      <button className="slider-btn left" onClick={decrementSlide}>
-        <Arrow color="#00A2E4" />
-      </button>
-      <button className="slider-btn right" onClick={incrementSlide}>
-        <Arrow color="white" rotate={180} />
-      </button>
-      <div className="line">
-        <div
-          style={{ width: `${(currentSlide / (slides.length - 1)) * 100}%` }}
-          className="inner"
-        />
-      </div>
-    </div>
-  );
 };
 
 export default Slider;

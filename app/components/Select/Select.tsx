@@ -29,7 +29,6 @@ const Select: React.FC<SelectProps> = ({
 }) => {
   const [selectOpened, setSelectOpened] = useState<boolean>(false);
 
-  // const [value, setValue] = useState(options[0]);
   return (
     <div
       data-color={color}

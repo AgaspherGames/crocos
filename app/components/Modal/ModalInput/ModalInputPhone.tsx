@@ -1,5 +1,5 @@
 import React, { Ref } from "react";
-import { UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
+import { UseFormRegisterReturn } from "react-hook-form";
 import InputMask from "react-input-mask";
 
 interface ModalInputPhoneProps
@@ -29,14 +29,13 @@ const ModalInputPhone: React.FC<ModalInputPhoneProps> = ({
         },
         defaultValue: "+7 (___) ___ __ __",
         placeholder: "+7 (___) ___ __ __",
-        permanents: [2, 5], // permanents is an array of indexes of the non-editable characters in the mask
+        permanents: [2, 5],
       }}
       {...register}
       {...props}
       className={`modal-input ${className}`}
     />
   );
-  // return ( <input {...props} ref={inputRef} className={`modal-input ${className}`} /> );
 };
 
 export default ModalInputPhone;

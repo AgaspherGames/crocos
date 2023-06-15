@@ -1,4 +1,4 @@
-import React, { LegacyRef, RefObject, useRef, useState } from "react";
+import React from "react";
 import Modal from "../Modal";
 import Button from "../../Button/Button";
 import ArrowCircleIcon from "@/app/icons/ArrowCircleIcon";
@@ -10,9 +10,6 @@ import ModalInputPhone from "../ModalInput/ModalInputPhone";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ModalInputCity from "../ModalInput/ModalInputCity";
-import CitySelect from "../../Header/CitySelect/CitySelect";
-import { useCities } from "@/app/hooks/handbookHooks";
-import { ICity, ICityItem } from "@/app/types/interfaces";
 
 interface UserInfoModalProps {
   opened: boolean;
@@ -40,11 +37,13 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
     // onSubmitForm({ phone, city, name, email });
   }
 
+  const phoneRegExp = /^(\+7)\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}$/;
+
   const schema = yup
     .object({
       name: yup.string().required().min(2),
       city: yup.string().required(),
-      phone: yup.string().required().length(18),
+      phone: yup.string().required().matches(phoneRegExp, 'Невалидный номер телефона'),
       email: yup.string().required().email(),
     })
     .required();
@@ -58,7 +57,6 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
     resolver: yupResolver(schema),
   });
 
-  // const onSubmit = data => console.log(data);
 
   return (
     <Modal opened={opened} setOpened={setOpened}>
@@ -106,9 +104,6 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
               type="text"
             />
             <Button
-              onClick={(e) => {
-                // e.preventDefault();
-              }}
               type="submit"
             >
               Отправить заявку <ArrowCircleIcon className="arrow-icon" />

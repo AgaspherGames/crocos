@@ -34,7 +34,6 @@ export const getServerSideProps: GetServerSideProps<{
     const response = await HandbookService.fetchCompanyService(id);
     const services: IService[] = (await HandbookService.fetchFilters()).data
       .data;
-      //.map((company:ICompany)=>({...company, reviews: company.reviews.filter(e=>e) }))
     return { props: { data: {...response.data.data, reviews: response.data.data.reviews.filter((e:ICReview)=>e)}, services } };
   } catch (error) {
     return {
