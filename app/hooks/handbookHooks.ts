@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import {
-  ICity,
   ICityItem,
   ICompany,
   IFilter,
-  ILink,
 } from "../types/interfaces";
 import { HandbookService } from "../services/HandbookService";
 import { useStore } from "./store";
