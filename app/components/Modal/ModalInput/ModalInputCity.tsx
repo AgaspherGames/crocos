@@ -41,9 +41,6 @@ const ModalInputCity: React.FC<ModalInputCityProps> = ({
     useState<{ value: string; label: string }[]>();
 
   const storeCities = useStore(state=>state.cities)
-  useEffect(() => {	
-    console.log(storeCities);
-   }, [storeCities])
   
 
   useEffect(() => {

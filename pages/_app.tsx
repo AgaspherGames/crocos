@@ -1,8 +1,11 @@
-import '@/styles/globals.scss'
-import '@/app/styles/main.scss'
-import type { AppProps } from 'next/app'
+import "@/styles/globals.scss";
+import "@/app/styles/main.scss";
+import type { AppProps } from "next/app";
 
 import localFont from "@next/font/local";
+import { useEffect } from "react";
+import { HandbookService } from "@/app/services/HandbookService";
+import { useStore } from "@/app/hooks/store";
 
 const euclideFlex = localFont({
   src: [
@@ -35,8 +38,18 @@ const euclideFlex = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  
-  return <main className={euclideFlex.className}>
-    <Component {...pageProps} />
-  </main>
+  const setStateCities = useStore((state) => state.setCities);
+
+  useEffect(() => {
+    HandbookService.fetchCities()
+      .then((resp) => {
+        setStateCities(resp.data.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+  return (
+    <main className={euclideFlex.className}>
+      <Component {...pageProps} />
+    </main>
+  );
 }

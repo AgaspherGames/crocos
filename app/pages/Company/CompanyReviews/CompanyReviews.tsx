@@ -13,7 +13,6 @@ interface CompanyReviewsProps {
 }
 
 const CompanyReviews: React.FC<CompanyReviewsProps> = ({ data, rating }) => {
-  console.log(JSON.stringify(data));
 
   return (
     <div className="company-reviews-section">

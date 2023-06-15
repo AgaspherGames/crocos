@@ -49,7 +49,6 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
       });
     }   
   });
-  // console.log(servicesWithInfo);
 
   return (
     <div className="services-container">

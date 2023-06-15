@@ -48,17 +48,17 @@ export function useCompanies(
 export function useCities() {
   const [cities, setCities] = useState<ICity[]>([]);
 
-  const setStateCities = useStore(state=>state.setCities) 
+  const stateCities = useStore(state=>state.cities) 
 
-  useEffect(() => {
-    HandbookService.fetchCities()
-      .then((resp) => {
-        setCities(resp.data.data)
-        setStateCities(resp.data.data)
-      })
-      .catch((error) => console.log(error));
-  }, []);
-  return cities;
+  // useEffect(() => {
+  //   HandbookService.fetchCities()
+  //     .then((resp) => {
+  //       setCities(resp.data.data)
+  //       setStateCities(resp.data.data)
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+  return stateCities;
 }
 export function useFilters() {
   const [filters, setFilters] = useState<IFilter[]>([]);

@@ -44,7 +44,6 @@ export const getServerSideProps: GetServerSideProps<{
 };
 
 const Company: React.FC<CompanyProps> = ({ data, services }) => {
-  console.log(data);
 
   return (
     <div>

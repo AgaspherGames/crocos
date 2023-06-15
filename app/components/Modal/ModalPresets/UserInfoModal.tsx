@@ -34,7 +34,6 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
   title = "Онлайн заявка",
   subTitle = "Оставте заявку и мы с вами свяжемся",
 }) => {
-
   function onSubmit(data: any) {
     console.log(data);
 
@@ -43,10 +42,10 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
 
   const schema = yup
     .object({
-      name: yup.string().required(),
+      name: yup.string().required().min(2),
       city: yup.string().required(),
-      phone: yup.string().required(),
-      email: yup.string().required(),
+      phone: yup.string().required().length(18),
+      email: yup.string().required().email(),
     })
     .required();
 
@@ -58,7 +57,7 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
   } = useForm({
     resolver: yupResolver(schema),
   });
-  
+
   // const onSubmit = data => console.log(data);
 
   return (
@@ -66,37 +65,46 @@ const UserInfoModal: React.FC<UserInfoModalProps> = ({
       <div className="consultation-modal">
         <p className="modal-title">{title}</p>
         <p className="modal-subtitle">{subTitle}</p>
-        <form onSubmit={handleSubmit(onSubmit)} >
+        <form onSubmit={handleSubmit(onSubmit)}>
           <ModalForm>
-            <ModalLabel htmlFor="name"> Ваше имя </ModalLabel>
-            <ModalInput
-              register={register('name')}
-              label="name"
-              type="text"
-            />
-            <p>{errors.name?.message && "Введите верное имя"}</p>
-            <ModalLabel htmlFor="city">Город</ModalLabel>
-            <ModalInputCity
-              control={control}
-              label="city"
-            />
-            <p>{errors.city?.message && "Введите верный город"}</p>
+            <ModalLabel
+              error={errors.city?.message && "Введите верное имя"}
+              htmlFor="name"
+            >
+              {" "}
+              Ваше имя{" "}
+            </ModalLabel>
+            <ModalInput register={register("name")} label="name" type="text" />
+            <ModalLabel
+              error={errors.city?.message && "Введите верный город"}
+              htmlFor="city"
+            >
+              Город
+            </ModalLabel>
+            <ModalInputCity control={control} label="city" />
 
-            <ModalLabel htmlFor="phone">Ваш телефон</ModalLabel>
+            <ModalLabel
+              error={errors.phone?.message && "Введите верный номер телефона"}
+              htmlFor="phone"
+            >
+              Ваш телефон
+            </ModalLabel>
             <ModalInputPhone
-              register={register('phone')}
-              
+              register={register("phone")}
               label="phone"
               type="text"
             />
-            <p>{errors.phone?.message && "Введите верный номер телефон"}</p>
-            <ModalLabel htmlFor="email">Ваш email</ModalLabel>
+            <ModalLabel
+              error={errors.email?.message && "Введите верную почту"}
+              htmlFor="email"
+            >
+              Ваш email
+            </ModalLabel>
             <ModalInput
-              register={register('email')}
+              register={register("email")}
               label="email"
               type="text"
             />
-            <p>{errors.email?.message && "Введите верную почту"}</p>
             <Button
               onClick={(e) => {
                 // e.preventDefault();
