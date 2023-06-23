@@ -14,6 +14,12 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
   data,
   services,
 }) => {
+
+
+  if (!data.security_service_types[0]){
+    return <div></div>
+  }
+
   interface Service {
     title: string;
     services: IService[];
@@ -28,9 +34,10 @@ const CompanyServices: React.FC<CompanyServicesProps> = ({
   }
   
   const servicesWithInfo: Service[] = [];
+  
   data.security_service_types.map((el) => {
     const category: IFilter | undefined = getCategory(
-      el.handbook_security_service_type.id
+      el?.handbook_security_service_type?.id
     );
     if (!category) return;
 
